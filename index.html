@@ -53,7 +53,7 @@
 </div>
 <p><strong>Motivating gap:</strong> safety-aware control methods exist, but it is not clear how they are used across swarm and multi-agent coordination tasks, nor how they connect to high-level swarm programming.</p>
 </section><section>
-<h1 id="why-control--functions-1">Why Control * Functions? <small>[1]</small></h1>
+<h1 id="why-control--functions">Why Control * Functions?</h1>
 
 <div class="container w-100 m-0 p-0">
     <div class="row "><div class="col "><h3 id="control-lyapunov-functions-clf">Control Lyapunov Functions (CLF)</h3>
@@ -72,10 +72,10 @@
 </div>
 </div>
 </div>
-<p><strong>CLF-CBF-QP idea:</strong> follow a nominal objective while minimally modifying the control input to satisfy safety constraints.</p>
+<p><strong>CLF-CBF-QP idea:</strong> follow a nominal objective while minimally modifying the control input to satisfy safety constraints <small>[1]</small>.</p>
 <div>
 <small style="text-align: left"><br>
-[1] Ames, A. D., Xu, X., Grizzle, J. W., Tabuada, P. "Control Barrier Function Based Quadratic Programs for Safety Critical Systems." 2017.<br>
+[1] A. D. Ames, X. Xu, J. W. Grizzle and P. Tabuada, "Control Barrier Function Based Quadratic Programs for Safety Critical Systems," 2017.<br>
 </small>
 </div>
 </section><section>
@@ -86,10 +86,10 @@
 <li>There is no single obvious search string;</li>
 <li>The boundary between <em>multi-agent systems</em>, <em>multi-robot systems</em>, and <em>swarm robotics</em> is not always explicit.</li>
 </ul>
-<p><strong>Review need:</strong> a transparent protocol to define the scope, identify relevant studies, extract comparable data, and synthesize the evidence.</p>
+<p><strong>Review need:</strong> a transparent protocol to define the scope, identify relevant studies, extract comparable data, and synthesize the evidence <small>[2]</small>.</p>
 <div>
 <small style="text-align: left"><br>
-[5] Kitchenham, B., Charters, S. "Guidelines for performing systematic literature reviews in software engineering." 2007.<br>
+[2] Kitchenham, Barbara &amp; Charters, Stuart, "Guidelines for performing Systematic Literature Reviews in Software Engineering," 2007.<br>
 </small>
 </div>
 </section><section>
@@ -102,6 +102,9 @@
 <li>Coverage and connectivity maintenance.</li>
 </ul>
 <p>The planned contribution is a <strong>taxonomy</strong> of existing approaches and a <strong>gap analysis</strong> toward safety-aware aggregate programming.</p>
+<p>Here, aggregate programming is not the main review topic,
+but the perspective used to interpret one possible research gap:
+how low-level safety guarantees could be exposed as composable high-level swarm programming abstractions.</p>
 </section><section>
 <h1 id="research-questions">Research questions</h1>
 <ul>
@@ -118,7 +121,7 @@
 <div class="container w-100 m-0 p-0">
     <div class="row "><div class="col "><h3 id="review-type">Review type</h3>
 <ul>
-<li>Systematic mapping / SLR-oriented review sketch;</li>
+<li>Systematic mapping / SLR-oriented review sketch <small>[3]</small>;</li>
 <li>Content-based classification of primary studies;</li>
 <li>No meta-analysis: expected evidence is heterogeneous.</li>
 </ul>
@@ -134,7 +137,7 @@
 </div>
 <div>
 <small style="text-align: left"><br>
-[6] Petersen, K., Vakkalanka, S., Kuzniarz, L. "Guidelines for conducting systematic mapping studies in software engineering: An update." 2015.<br>
+[3] Kai Petersen, Sairam Vakkalanka, Ludwik Kuzniarz, "Guidelines for conducting systematic mapping studies in software engineering: An update," 2015.<br>
 </small>
 </div>
 </section><section>
@@ -148,12 +151,10 @@
 </span></span><span style="display:flex;"><span>AND
 </span></span><span style="display:flex;"><span>(distributed OR decentralized OR local)
 </span></span></code></pre></div><p><strong>Possible databases:</strong> Scopus, IEEE Xplore, ACM Digital Library, SpringerLink, ScienceDirect.</p>
-<p><strong>Complementary strategy:</strong> backward and forward snowballing from selected seed papers.</p>
+<p><strong>Complementary strategy:</strong> backward and forward snowballing from selected seed papers <small>[4]</small>.</p>
 <div>
 <small style="text-align: left">
-<br>
-[6] Petersen, K., Vakkalanka, S., Kuzniarz, L. "Guidelines for conducting systematic mapping studies in software engineering: An update." 2015.<br>
-[7] Wohlin, C. "Guidelines for snowballing in systematic literature studies and a replication in software engineering." 2014.<br>
+[4] Claes Wohlin, "Guidelines for snowballing in systematic literature studies and a replication in software engineering" 2014.
 </small>
 </div>
 </section><section>
@@ -200,11 +201,6 @@
 </div>
 </div>
 <p>The aim is not to discard many papers, but to make the strength and limitations of the evidence explicit.</p>
-<div>
-<small style="text-align: left"><br>
-[5] Kitchenham, B., Charters, S. "Guidelines for performing systematic literature reviews in software engineering." 2007.<br>
-</small>
-</div>
 </section><section>
 <h1 id="preliminary-extraction-and-classification-framework">Preliminary extraction and classification framework</h1>
 <table>
@@ -255,22 +251,23 @@
 </div>
 <div class="col "><h3 id="aggregate-computing">Aggregate computing</h3>
 <ul>
-<li>High-level collective behavior;</li>
-<li>Composable field-based abstractions;</li>
-<li>Useful for programming large-scale distributed systems.</li>
+<li>A macro-programming paradigm for distributed collective systems <small>[5]</small>;</li>
+<li>Devices compute local values and exchange them with neighbors;</li>
+<li>Global behavior emerges as a computational field over the network.</li>
 </ul>
 </div>
 </div>
 </div>
-<p><strong>Question:</strong> can safety certificates become first-class abstractions in swarm programming?</p>
+<p><strong>Question:</strong> can CLF/CBF-style safety guarantees be lifted from local controllers to aggregate-level programming abstractions?</p>
 <div>
 <small style="text-align: left">
-[3] Beal, J., Pianini, D., Viroli, M. "Aggregate Programming for the Internet of Things." 2015.
+[5] J. Beal, D. Pianini and M. Viroli, "Aggregate Programming for the Internet of Things," 2015.
 </small>
 </div>
 </section><section>
 <h1 id="macroswarm-as-a-possible-bridge">MacroSwarm as a possible bridge</h1>
-<p>MacroSwarm uses aggregate computing ideas to express swarm behaviors as composable blocks.</p>
+<p>MacroSwarm is useful here because it instantiates aggregate computing in the swarm robotics setting <small>[6]</small>:
+collective behaviors are expressed as composable high-level blocks, rather than only as low-level controllers.</p>
 <ul>
 <li>Collective movement;</li>
 <li>Flocking and leader-follower behavior;</li>
@@ -280,7 +277,7 @@
 <p><strong>Opportunity:</strong> use CBF-style safety filters to make such blocks safety-aware.</p>
 <div>
 <small style="text-align: left">
-[4] Pianini, D., Casadei, R., Viroli, M., et al. "MacroSwarm: A Field-Based Compositional Framework for Swarm Programming." 2024.
+[6] Gianluca Aguzzi, Mirko Viroli, "MacroSwarm: A scala framework for swarm programming," 2025.
 </small>
 </div>
 </section><section>
@@ -288,13 +285,6 @@
 <p><strong>Gap:</strong> CLF/CBF methods provide formal safety and convergence guarantees, but they are rarely integrated as reusable and composable abstractions in macro-programming frameworks for swarms.</p>
 <p>Conversely, aggregate programming provides compositional high-level coordination, but safety certificates are not usually exposed as central programming constructs.</p>
 <p><strong>Potential paper idea:</strong> safety-aware aggregate programming for swarm robotics.</p>
-<div>
-<small style="text-align: left">
-[1] Ames, A. D., Xu, X., Grizzle, J. W., Tabuada, P. "Control Barrier Function Based Quadratic Programs for Safety Critical Systems." 2017.<br>
-[3] Beal, J., Pianini, D., Viroli, M. "Aggregate Programming for the Internet of Things." 2015.<br>
-[4] Pianini, D., Casadei, R., Viroli, M., et al. "MacroSwarm: A Field-Based Compositional Framework for Swarm Programming." 2024.<br>
-</small>
-</div>
 </section><section>
 <h1 id="proposed-direction">Proposed direction</h1>
 <p>Aggregate / MacroSwarm behavior block<br>
@@ -305,12 +295,6 @@ CBF safety filter or QP projection<br>
 ↓<br>
 Safe distributed actuation</p>
 <p>The nominal collective behavior is preserved whenever possible, while unsafe actions are locally corrected.</p>
-<div>
-<small style="text-align: left">
-[1] Ames, A. D., Xu, X., Grizzle, J. W., Tabuada, P. "Control Barrier Function Based Quadratic Programs for Safety Critical Systems." 2017.<br>
-[4] Pianini, D., Casadei, R., Viroli, M., et al. "MacroSwarm: A Field-Based Compositional Framework for Swarm Programming." 2024.<br>
-</small>
-</div>
 </section><section>
 <h1 id="expected-outputs">Expected outputs</h1>
 <ul>
@@ -320,13 +304,6 @@ Safe distributed actuation</p>
 <li>A synthesis structured around tasks, architectures, safety properties, and validation;</li>
 <li>A gap analysis toward safety-aware aggregate and macro-programming abstractions.</li>
 </ul>
-<p>This could become the basis for a future systematic mapping study or SLR paper.</p>
-<div>
-<small style="text-align: left">
-[5] Kitchenham, B., Charters, S. "Guidelines for performing systematic literature reviews in software engineering." 2007.<br>
-[6] Petersen, K., Vakkalanka, S., Kuzniarz, L. "Guidelines for conducting systematic mapping studies in software engineering: An update." 2015.<br>
-</small>
-</div>
 </section><section>
 <h1 id="takeaways">Takeaways</h1>
 <ol>
@@ -336,19 +313,15 @@ Safe distributed actuation</p>
 </ol>
 <p><strong>Final idea:</strong> from safe controllers to safety-aware aggregate blocks.</p>
 </section><section>
-<h1 id="backup-references--seed-papers">Backup references / seed papers</h1>
-<small>
+<h1 id="references">References</h1>
 <ul>
-  <li>Ames, A. D., Xu, X., Grizzle, J. W., Tabuada, P. "Control Barrier Function Based Quadratic Programs for Safety Critical Systems." 2017.</li>
-  <li>Beal, J., Pianini, D., Viroli, M. "Aggregate Programming for the Internet of Things." 2015.</li>
-  <li>Pianini, D., Casadei, R., Viroli, M., et al. "MacroSwarm: A Field-Based Compositional Framework for Swarm Programming." 2024.</li>
-  <li>Notomista, G., Egerstedt, M. "Persistification of Robotic Tasks Using Control Barrier Functions." 2019.</li>
-  <li>Chen, Y., Singletary, A., Ames, A. D. "Guaranteed Obstacle Avoidance for Multi-Robot Operations with Limited Actuation." 2021.</li>
-  <li>Kitchenham, B., Charters, S. "Guidelines for performing systematic literature reviews in software engineering." 2007.</li>
-  <li>Petersen, K., Vakkalanka, S., Kuzniarz, L. "Guidelines for conducting systematic mapping studies in software engineering: An update." 2015.</li>
-  <li>Wohlin, C. "Guidelines for snowballing in systematic literature studies and a replication in software engineering." 2014.</li>
+<li>[1] A. D. Ames, X. Xu, J. W. Grizzle and P. Tabuada, “Control Barrier Function Based Quadratic Programs for Safety Critical Systems,” 2017.</li>
+<li>[2] Kitchenham, Barbara &amp; Charters, Stuart, “Guidelines for performing Systematic Literature Reviews in Software Engineering,” 2007.</li>
+<li>[3] Kai Petersen, Sairam Vakkalanka, Ludwik Kuzniarz, “Guidelines for conducting systematic mapping studies in software engineering: An update,” 2015.</li>
+<li>[4] Claes Wohlin, “Guidelines for snowballing in systematic literature studies and a replication in software engineering” 2014.</li>
+<li>[5] J. Beal, D. Pianini and M. Viroli, “Aggregate Programming for the Internet of Things,” 2015.</li>
+<li>[6] Gianluca Aguzzi, Mirko Viroli, “MacroSwarm: A scala framework for swarm programming,” 2025.</li>
 </ul>
-</small>
 </section>
 
   
