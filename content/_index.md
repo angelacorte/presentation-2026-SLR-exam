@@ -109,6 +109,10 @@ The focus would be on tasks such as:
 
 The planned contribution is a **taxonomy** of existing approaches and a **gap analysis** toward safety-aware aggregate programming.
 
+Here, aggregate programming is not the main review topic, 
+but the perspective used to interpret one possible research gap: 
+how low-level safety guarantees could be exposed as composable high-level swarm programming abstractions.
+
 ---
 
 # Research questions
@@ -176,7 +180,6 @@ AND
 
 <div>
 <small style="text-align: left">
-</br>
 [6] Petersen, K., Vakkalanka, S., Kuzniarz, L. "Guidelines for conducting systematic mapping studies in software engineering: An update." 2015.</br>
 [7] Wohlin, C. "Guidelines for snowballing in systematic literature studies and a replication in software engineering." 2014.</br>
 </small>
@@ -284,15 +287,15 @@ These are not final categories: they would be refined during data extraction and
 
 ### Aggregate computing
 
-- High-level collective behavior;
-- Composable field-based abstractions;
-- Useful for programming large-scale distributed systems.
+- A macro-programming paradigm for distributed collective systems;
+- Devices compute local values and exchange them with neighbors;
+- Global behavior emerges as a computational field over the network.
 
 {{% /col %}}
 
 {{% /multicol %}}
 
-**Question:** can safety certificates become first-class abstractions in swarm programming?
+**Question:** can CLF/CBF-style safety guarantees be lifted from local controllers to aggregate-level programming abstractions?
 
 <div>
 <small style="text-align: left">
@@ -304,7 +307,8 @@ These are not final categories: they would be refined during data extraction and
 
 # MacroSwarm as a possible bridge
 
-MacroSwarm uses aggregate computing ideas to express swarm behaviors as composable blocks.
+MacroSwarm is useful here because it instantiates aggregate computing in the swarm robotics setting: 
+collective behaviors are expressed as composable high-level blocks, rather than only as low-level controllers.
 
 - Collective movement;
 - Flocking and leader-follower behavior;
