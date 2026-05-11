@@ -1,0 +1,492 @@
+<!DOCTYPE html><html lang="en"><head>
+	<meta name="generator" content="Hugo 0.155.3">
+    <meta charset="utf-8">
+<title>Review Protocol Sketch: CLF/CBF for Safe Swarm Coordination</title>
+<meta name="description" content="SLR exam presentation for Literature reviews: methods and tools">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><link rel="stylesheet" href="/presentation-2026-SLR-exam/reveal-js/dist/reset.css">
+<link rel="stylesheet" href="/presentation-2026-SLR-exam/reveal-js/dist/reveal.css">
+  <link rel="stylesheet" href="/presentation-2026-SLR-exam/css/custom-theme.min.fc522ed9a2812d972e4dd091f906c174014cff90686e10b69738fe83ebcfa14b.css" id="theme"><link rel="stylesheet" href="/presentation-2026-SLR-exam/highlight-js/solarized-dark.min.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto Mono" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Oxygen Mono" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Ubuntu Mono" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/gh/DanySK/css-blur-animation/blur.css" rel="stylesheet" crossorigin="anonymous">
+
+<script src="https://kit.fontawesome.com/81ac037be0.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
+
+  </head>
+  <body>
+    
+    <div class="reveal">
+      <div class="slides">
+  
+
+    <section><h3 id="review-sketch">Review sketch</h3>
+<h1 id="control-lyapunov-and-control-barrier-functions-for-safe-coordination-in-swarm-and-multi-agent-systems"><em>Control Lyapunov</em> and <em>Control Barrier Functions</em> for Safe Coordination in Swarm and <em>Multi-Agent Systems</em></h1>
+<p><a href="mailto:angela.cortecchia@unibo.it"><strong>Angela Cortecchia</strong></a></p>
+<div style="text-align: center; width: 100%; margin-top: 5rem;">
+<img src="example-background.svg" style="width: 30%">
+</div>
+</section><section>
+<h1 id="motivation">Motivation</h1>
+
+<div class="container w-100 m-0 p-0">
+    <div class="row "><div class="col "><h3 id="research-context">Research context</h3>
+<ul>
+<li>Swarm and multi-agent systems coordinate through local interactions;</li>
+<li>Typical tasks include movement, formation, coverage, and flocking;</li>
+<li>In safety-critical settings, coordination alone is not enough.</li>
+</ul>
+</div>
+<div class="col "><h3 id="safety-concerns">Safety concerns</h3>
+<ul>
+<li>Avoid inter-agent collisions;</li>
+<li>Avoid obstacles and unsafe regions;</li>
+<li>Preserve constraints such as connectivity or formation structure.</li>
+</ul>
+</div>
+</div>
+</div>
+<p><strong>Motivating gap:</strong> safety-aware control methods exist, but it is not clear how they are used across swarm and multi-agent coordination tasks, nor how they connect to high-level swarm programming.</p>
+</section><section>
+<h1 id="why-control--functions-1">Why Control * Functions? <small>[1]</small></h1>
+
+<div class="container w-100 m-0 p-0">
+    <div class="row "><div class="col "><h3 id="control-lyapunov-functions-clf">Control Lyapunov Functions (CLF)</h3>
+<ul>
+<li>Encode progress toward a goal;</li>
+<li>Support convergence and stabilization;</li>
+<li>Useful for reaching a target, tracking, and formation objectives.</li>
+</ul>
+</div>
+<div class="col "><h3 id="control-barrier-functions-cbf">Control Barrier Functions (CBF)</h3>
+<ul>
+<li>Encode safety constraints;</li>
+<li>Keep the system inside a safe set;</li>
+<li>Useful for collision avoidance and obstacle avoidance.</li>
+</ul>
+</div>
+</div>
+</div>
+<p><strong>CLF-CBF-QP idea:</strong> follow a nominal objective while minimally modifying the control input to satisfy safety constraints.</p>
+<div>
+<small style="text-align: left"><br>
+[1] Ames, A. D., Xu, X., Grizzle, J. W., Tabuada, P. "Control Barrier Function Based Quadratic Programs for Safety Critical Systems." 2017.<br>
+</small>
+</div>
+</section><section>
+<h1 id="why-this-is-a-literature-review-problem">Why this is a literature review problem</h1>
+<ul>
+<li>The topic is spread across control theory, robotics, swarm intelligence, and distributed systems;</li>
+<li>Different communities use different terminology for similar ideas;</li>
+<li>There is no single obvious search string;</li>
+<li>The boundary between <em>multi-agent systems</em>, <em>multi-robot systems</em>, and <em>swarm robotics</em> is not always explicit.</li>
+</ul>
+<p><strong>Review need:</strong> a transparent protocol to define the scope, identify relevant studies, extract comparable data, and synthesize the evidence.</p>
+<div>
+<small style="text-align: left"><br>
+[5] Kitchenham, B., Charters, S. "Guidelines for performing systematic literature reviews in software engineering." 2007.<br>
+</small>
+</div>
+</section><section>
+<h1 id="review-objective">Review objective</h1>
+<p>The planned review would investigate how <strong>Control Lyapunov Functions</strong> and <strong>Control Barrier Functions</strong> are used to support safe coordination in <strong>swarm</strong> and <strong>multi-agent systems</strong>.</p>
+<p>The focus would be on tasks such as:</p>
+<ul>
+<li>Collision avoidance;</li>
+<li>Formation control;</li>
+<li>Coverage and connectivity maintenance.</li>
+</ul>
+<p>The planned contribution is a <strong>taxonomy</strong> of existing approaches and a <strong>gap analysis</strong> toward safety-aware aggregate programming.</p>
+</section><section>
+<h1 id="research-questions">Research questions</h1>
+<ul>
+<li><strong>RQ1.</strong> What coordination tasks are addressed by CLF/CBF-based approaches in swarm and multi-agent systems?</li>
+<li><strong>RQ2.</strong> What safety properties are modeled and enforced?</li>
+<li><strong>RQ3.</strong> What control and coordination architectures are adopted?</li>
+<li><strong>RQ4.</strong> How are the proposed approaches evaluated?</li>
+<li><strong>RQ5.</strong> What evidence exists about scalability and distributed implementation?</li>
+<li><strong>RQ6.</strong> What gaps emerge with respect to high-level swarm programming and aggregate computing?</li>
+</ul>
+</section><section>
+<h1 id="review-type-and-scope">Review type and scope</h1>
+
+<div class="container w-100 m-0 p-0">
+    <div class="row "><div class="col "><h3 id="review-type">Review type</h3>
+<ul>
+<li>Systematic mapping / SLR-oriented review sketch;</li>
+<li>Content-based classification of primary studies;</li>
+<li>No meta-analysis: expected evidence is heterogeneous.</li>
+</ul>
+</div>
+<div class="col "><h3 id="scope-choices">Scope choices</h3>
+<ul>
+<li>White literature as the main source;</li>
+<li>arXiv only as complementary source for emerging works;</li>
+<li>Focus on robotics, control, and multi-agent coordination.</li>
+</ul>
+</div>
+</div>
+</div>
+<div>
+<small style="text-align: left"><br>
+[6] Petersen, K., Vakkalanka, S., Kuzniarz, L. "Guidelines for conducting systematic mapping studies in software engineering: An update." 2015.<br>
+</small>
+</div>
+</section><section>
+<h1 id="search-strategy-sketch">Search strategy sketch</h1>
+<h3 id="candidate-query-string">Candidate query string</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="nohighlight" data-noescape=""><span style="display:flex;"><span>("control barrier function" OR "control Lyapunov function" OR "CLF-CBF")
+</span></span><span style="display:flex;"><span>AND
+</span></span><span style="display:flex;"><span>("multi-agent" OR "multi-robot" OR swarm OR "robot swarm")
+</span></span><span style="display:flex;"><span>AND
+</span></span><span style="display:flex;"><span>("collision avoidance" OR "formation control" OR coverage OR coordination)
+</span></span><span style="display:flex;"><span>AND
+</span></span><span style="display:flex;"><span>(distributed OR decentralized OR local)
+</span></span></code></pre></div><p><strong>Possible databases:</strong> Scopus, IEEE Xplore, ACM Digital Library, SpringerLink, ScienceDirect.</p>
+<p><strong>Complementary strategy:</strong> backward and forward snowballing from selected seed papers.</p>
+<div>
+<small style="text-align: left">
+<br>
+[6] Petersen, K., Vakkalanka, S., Kuzniarz, L. "Guidelines for conducting systematic mapping studies in software engineering: An update." 2015.<br>
+[7] Wohlin, C. "Guidelines for snowballing in systematic literature studies and a replication in software engineering." 2014.<br>
+</small>
+</div>
+</section><section>
+<h1 id="inclusion-and-exclusion-criteria">Inclusion and exclusion criteria</h1>
+
+<div class="container w-100 m-0 p-0">
+    <div class="row "><div class="col "><h3 id="include">Include</h3>
+<ul>
+<li>Multi-agent, multi-robot, or swarm systems;</li>
+<li>Explicit use of CLF, CBF, or related barrier certificates;</li>
+<li>Safety or convergence guarantees;</li>
+<li>Distributed, decentralized, or locally implementable methods.</li>
+</ul>
+</div>
+<div class="col "><h3 id="exclude">Exclude</h3>
+<ul>
+<li>Single-agent only studies;</li>
+<li>Pure path planning without safety certificates;</li>
+<li>No explicit coordination or safety task;</li>
+<li>Non-English papers.</li>
+</ul>
+</div>
+</div>
+</div>
+</section><section>
+<h1 id="study-selection-and-quality-assessment">Study selection and quality assessment</h1>
+
+<div class="container w-100 m-0 p-0">
+    <div class="row "><div class="col "><h3 id="selection-process">Selection process</h3>
+<ul>
+<li>Remove duplicates across databases;</li>
+<li>Screen title and abstract using inclusion/exclusion criteria;</li>
+<li>Read full text for borderline or relevant studies.</li>
+</ul>
+</div>
+<div class="col "><h3 id="lightweight-quality-checks">Lightweight quality checks</h3>
+<ul>
+<li>Is the safety property explicitly defined?</li>
+<li>Are assumptions and system model clear?</li>
+<li>Is the evaluation scenario described?</li>
+<li>Is the level of distribution/decentralization explicit?</li>
+</ul>
+</div>
+</div>
+</div>
+<p>The aim is not to discard many papers, but to make the strength and limitations of the evidence explicit.</p>
+<div>
+<small style="text-align: left"><br>
+[5] Kitchenham, B., Charters, S. "Guidelines for performing systematic literature reviews in software engineering." 2007.<br>
+</small>
+</div>
+</section><section>
+<h1 id="preliminary-extraction-and-classification-framework">Preliminary extraction and classification framework</h1>
+<table>
+  <thead>
+      <tr>
+          <th>Dimension</th>
+          <th>Possible values</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Coordination task</td>
+          <td>collision avoidance, formation, coverage, flocking</td>
+      </tr>
+      <tr>
+          <td>Control architecture</td>
+          <td>centralized, decentralized, distributed</td>
+      </tr>
+      <tr>
+          <td>Safety mechanism</td>
+          <td>CBF, CLF-CBF-QP, barrier certificates, hybrid methods</td>
+      </tr>
+      <tr>
+          <td>System type</td>
+          <td>ground robots, UAVs, generic nonlinear MAS, simulated swarm</td>
+      </tr>
+      <tr>
+          <td>Validation</td>
+          <td>theory only, simulation, hardware experiments</td>
+      </tr>
+      <tr>
+          <td>Scalability evidence</td>
+          <td>number of agents, simulation scale, hardware scale, computational burden</td>
+      </tr>
+  </tbody>
+</table>
+<p>These are not final categories: they would be refined during data extraction and adjusted if the selected studies reveal additional recurring dimensions.</p>
+</section><section>
+<h1 id="from-safe-control-to-swarm-programming">From safe control to swarm programming</h1>
+
+<div class="container w-100 m-0 p-0">
+    <div class="row "><div class="col "><h3 id="clfcbf-literature">CLF/CBF literature</h3>
+<ul>
+<li>Strong formal guarantees;</li>
+<li>Precise control-level formulations;</li>
+<li>Often expressed as optimization problems.</li>
+</ul>
+</div>
+<div class="col "><h3 id="aggregate-computing">Aggregate computing</h3>
+<ul>
+<li>High-level collective behavior;</li>
+<li>Composable field-based abstractions;</li>
+<li>Useful for programming large-scale distributed systems.</li>
+</ul>
+</div>
+</div>
+</div>
+<p><strong>Question:</strong> can safety certificates become first-class abstractions in swarm programming?</p>
+<div>
+<small style="text-align: left">
+[3] Beal, J., Pianini, D., Viroli, M. "Aggregate Programming for the Internet of Things." 2015.
+</small>
+</div>
+</section><section>
+<h1 id="macroswarm-as-a-possible-bridge">MacroSwarm as a possible bridge</h1>
+<p>MacroSwarm uses aggregate computing ideas to express swarm behaviors as composable blocks.</p>
+<ul>
+<li>Collective movement;</li>
+<li>Flocking and leader-follower behavior;</li>
+<li>Shape formation and morphogenesis;</li>
+<li>Team formation and collective planning.</li>
+</ul>
+<p><strong>Opportunity:</strong> use CBF-style safety filters to make such blocks safety-aware.</p>
+<div>
+<small style="text-align: left">
+[4] Pianini, D., Casadei, R., Viroli, M., et al. "MacroSwarm: A Field-Based Compositional Framework for Swarm Programming." 2024.
+</small>
+</div>
+</section><section>
+<h1 id="identified-research-gap">Identified research gap</h1>
+<p><strong>Gap:</strong> CLF/CBF methods provide formal safety and convergence guarantees, but they are rarely integrated as reusable and composable abstractions in macro-programming frameworks for swarms.</p>
+<p>Conversely, aggregate programming provides compositional high-level coordination, but safety certificates are not usually exposed as central programming constructs.</p>
+<p><strong>Potential paper idea:</strong> safety-aware aggregate programming for swarm robotics.</p>
+<div>
+<small style="text-align: left">
+[1] Ames, A. D., Xu, X., Grizzle, J. W., Tabuada, P. "Control Barrier Function Based Quadratic Programs for Safety Critical Systems." 2017.<br>
+[3] Beal, J., Pianini, D., Viroli, M. "Aggregate Programming for the Internet of Things." 2015.<br>
+[4] Pianini, D., Casadei, R., Viroli, M., et al. "MacroSwarm: A Field-Based Compositional Framework for Swarm Programming." 2024.<br>
+</small>
+</div>
+</section><section>
+<h1 id="proposed-direction">Proposed direction</h1>
+<p>Aggregate / MacroSwarm behavior block<br>
+↓<br>
+Nominal desired movement field<br>
+↓<br>
+CBF safety filter or QP projection<br>
+↓<br>
+Safe distributed actuation</p>
+<p>The nominal collective behavior is preserved whenever possible, while unsafe actions are locally corrected.</p>
+<div>
+<small style="text-align: left">
+[1] Ames, A. D., Xu, X., Grizzle, J. W., Tabuada, P. "Control Barrier Function Based Quadratic Programs for Safety Critical Systems." 2017.<br>
+[4] Pianini, D., Casadei, R., Viroli, M., et al. "MacroSwarm: A Field-Based Compositional Framework for Swarm Programming." 2024.<br>
+</small>
+</div>
+</section><section>
+<h1 id="expected-outputs">Expected outputs</h1>
+<ul>
+<li>A reproducible protocol: RQs, search strings, databases, selection criteria;</li>
+<li>A dataset of selected primary studies and extraction fields;</li>
+<li>A taxonomy of CLF/CBF-based safe coordination approaches;</li>
+<li>A synthesis structured around tasks, architectures, safety properties, and validation;</li>
+<li>A gap analysis toward safety-aware aggregate and macro-programming abstractions.</li>
+</ul>
+<p>This could become the basis for a future systematic mapping study or SLR paper.</p>
+<div>
+<small style="text-align: left">
+[5] Kitchenham, B., Charters, S. "Guidelines for performing systematic literature reviews in software engineering." 2007.<br>
+[6] Petersen, K., Vakkalanka, S., Kuzniarz, L. "Guidelines for conducting systematic mapping studies in software engineering: An update." 2015.<br>
+</small>
+</div>
+</section><section>
+<h1 id="takeaways">Takeaways</h1>
+<ol>
+<li>CLF and CBF provide a promising lens for safety-critical swarm coordination;</li>
+<li>A review protocol can make the scope, search, selection, extraction, and synthesis reproducible;</li>
+<li>The aggregate computing perspective reveals an original gap: compositional programming of formally safe swarm behaviors.</li>
+</ol>
+<p><strong>Final idea:</strong> from safe controllers to safety-aware aggregate blocks.</p>
+</section><section>
+<h1 id="backup-references--seed-papers">Backup references / seed papers</h1>
+<small>
+<ul>
+  <li>Ames, A. D., Xu, X., Grizzle, J. W., Tabuada, P. "Control Barrier Function Based Quadratic Programs for Safety Critical Systems." 2017.</li>
+  <li>Beal, J., Pianini, D., Viroli, M. "Aggregate Programming for the Internet of Things." 2015.</li>
+  <li>Pianini, D., Casadei, R., Viroli, M., et al. "MacroSwarm: A Field-Based Compositional Framework for Swarm Programming." 2024.</li>
+  <li>Notomista, G., Egerstedt, M. "Persistification of Robotic Tasks Using Control Barrier Functions." 2019.</li>
+  <li>Chen, Y., Singletary, A., Ames, A. D. "Guaranteed Obstacle Avoidance for Multi-Robot Operations with Limited Actuation." 2021.</li>
+  <li>Kitchenham, B., Charters, S. "Guidelines for performing systematic literature reviews in software engineering." 2007.</li>
+  <li>Petersen, K., Vakkalanka, S., Kuzniarz, L. "Guidelines for conducting systematic mapping studies in software engineering: An update." 2015.</li>
+  <li>Wohlin, C. "Guidelines for snowballing in systematic literature studies and a replication in software engineering." 2014.</li>
+</ul>
+</small>
+</section>
+
+  
+
+
+</div>
+      
+
+    </div>
+<script type="text/javascript" src="/presentation-2026-SLR-exam/reveal-hugo/object-assign.js"></script>
+
+<a href="/presentation-2026-SLR-exam/reveal-js/dist/print/" id="print-location" style="display: none;"></a>
+
+<script type="application/json" id="reveal-hugo-site-params">{"custom_theme":"custom-theme.scss","custom_theme_compile":true,"custom_theme_options":{"enablesourcemap":true,"targetpath":"css/custom-theme.css"},"height":"1080","highlight_theme":"solarized-dark","history":true,"mermaid":[{}],"slide_number":true,"theme":"league","transition":"slide","transition_speed":"fast","width":"1920"}</script>
+<script type="application/json" id="reveal-hugo-page-params">null</script>
+
+<script src="/presentation-2026-SLR-exam/reveal-js/dist/reveal.js"></script>
+
+
+  
+  
+  <script type="text/javascript" src="/presentation-2026-SLR-exam/reveal-js/plugin/markdown/markdown.js"></script>
+  
+  <script type="text/javascript" src="/presentation-2026-SLR-exam/reveal-js/plugin/highlight/highlight.js"></script>
+  
+  <script type="text/javascript" src="/presentation-2026-SLR-exam/reveal-js/plugin/zoom/zoom.js"></script>
+  
+  <script type="text/javascript" src="/presentation-2026-SLR-exam/reveal-js/plugin/notes/notes.js"></script>
+  
+  
+  <script type="text/javascript" src="/presentation-2026-SLR-exam/reveal-js/plugin/notes/notes.js"></script>
+
+
+
+
+<script type="text/javascript">
+  
+  
+  function camelize(map) {
+    if (map) {
+      Object.keys(map).forEach(function(k) {
+        newK = k.replace(/(\_\w)/g, function(m) { return m[1].toUpperCase() });
+        if (newK != k) {
+          map[newK] = map[k];
+          delete map[k];
+        }
+      });
+    }
+    return map;
+  }
+
+  var revealHugoDefaults = { center: true, controls: true, history: true, progress: true, transition: "slide" };
+
+  var revealHugoPlugins = {
+    plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom ]
+   };
+  var revealHugoSiteParams = JSON.parse(document.getElementById('reveal-hugo-site-params').innerHTML);
+  var revealHugoPageParams = JSON.parse(document.getElementById('reveal-hugo-page-params').innerHTML);
+  
+  var options = Object.assign({},
+    camelize(revealHugoDefaults),
+    camelize(revealHugoSiteParams),
+    camelize(revealHugoPageParams),
+    camelize(revealHugoPlugins));
+  Reveal.initialize(options);
+</script>
+
+
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+
+
+
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+</script>
+
+<script type="text/javascript" id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+<script>
+  if (/.*?(\?|&)print-pdf/.test(window.location.toString())) {
+      var ytVideos = document.getElementsByTagName("iframe")
+      for (let i = 0; i < ytVideos.length; i++) {
+          var videoFrame = ytVideos[i]
+          var isYouTube = /^https?:\/\/(www.)youtube\.com\/.*/.test(videoFrame.src)
+          if (isYouTube) {
+              console.log(`Removing ${videoFrame.src}`)
+              var parent = videoFrame.parentElement
+              videoFrame.remove()
+              var p = document.createElement('p')
+              p.append(
+                  document.createTextNode(
+                      "There was an embedded video here, but it is disabled in the printed version of the slides."
+                  )
+              )
+              p.append(document.createElement('br'))
+              p.append(
+                  document.createTextNode(
+                      `Visit instead ${
+                          videoFrame.src
+                      } or ${
+                          videoFrame.src.replace(
+                              /(^https?:\/\/(www.)youtube\.com)\/(embed\/)(\w+).*/,
+                              "https://www.youtube.com/watch?v=$4"
+                          )
+                      }`
+                  )
+              )
+              parent.appendChild(p)
+          }
+      }
+  }
+</script>
+
+
+    
+  
+
+</body></html>
