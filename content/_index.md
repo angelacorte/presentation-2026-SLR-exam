@@ -74,8 +74,8 @@ outputs = ["Reveal"]
 **CLF-CBF-QP idea:** follow a nominal objective while minimally modifying the control input to satisfy safety constraints <small>[1]</small>.
 
 <div>
-<small style="text-align: left"></br>
-[1] A. D. Ames, X. Xu, J. W. Grizzle and P. Tabuada, "Control Barrier Function Based Quadratic Programs for Safety Critical Systems," 2017.</br>
+<small style="text-align: left">
+[1] A. D. Ames, X. Xu, J. W. Grizzle and P. Tabuada, "Control Barrier Function Based Quadratic Programs for Safety Critical Systems," 2017.
 </small>
 </div>
 
@@ -91,8 +91,8 @@ outputs = ["Reveal"]
 **Review need:** a transparent protocol to define the scope, identify relevant studies, extract comparable data, and synthesize the evidence <small>[2]</small>.
 
 <div>
-<small style="text-align: left"></br>
-[2] Kitchenham, Barbara & Charters, Stuart, "Guidelines for performing Systematic Literature Reviews in Software Engineering," 2007.</br>
+<small style="text-align: left">
+[2] Kitchenham, Barbara & Charters, Stuart, "Guidelines for performing Systematic Literature Reviews in Software Engineering," 2007.
 </small>
 </div>
 
@@ -153,8 +153,47 @@ how low-level safety guarantees could be exposed as composable high-level swarm 
 {{% /multicol %}}
 
 <div>
-<small style="text-align: left"></br>
-[3] Kai Petersen, Sairam Vakkalanka, Ludwik Kuzniarz, "Guidelines for conducting systematic mapping studies in software engineering: An update," 2015.</br>
+<small style="text-align: left">
+[3] Kai Petersen, Sairam Vakkalanka, Ludwik Kuzniarz, "Guidelines for conducting systematic mapping studies in software engineering: An update," 2015.
+</small>
+</div>
+
+---
+
+# Methodological exemplar: macroprogramming survey
+
+An in-topic survey on macroprogramming is used here as a methodological reference point: 
+it shows how a broad and fragmented research area can be organized through a review-style structure <small>[4]</small>.
+
+{{% multicol %}}
+
+{{% col %}}
+
+### Structure highlighted
+
+- Motivation: the field is fragmented across domains;
+- Research questions: used to organise the investigation;
+- Search and selection: based on databases, keywords, and manual inspection;
+- Extraction: notes on self-positioning, programming model, implementation, and examples.
+
+{{% /col %}}
+
+{{% col %}}
+
+### Methodological takeaways
+
+- Terminology is treated as part of the review scope;
+- Classification dimensions are made explicit;
+- Synthesis is organised around concepts and themes;
+- The review ends by identifying opportunities and challenges.
+
+{{% /col %}}
+
+{{% /multicol %}}
+
+<div>
+<small style="text-align: left">
+[4] R. Casadei, "Macroprogramming: Concepts, State of the Art, and Opportunities of Macroscopic Behaviour Modelling," 2023.
 </small>
 </div>
 
@@ -176,11 +215,11 @@ AND
 
 **Possible databases:** Scopus, IEEE Xplore, ACM Digital Library, SpringerLink, ScienceDirect.
 
-**Complementary strategy:** backward and forward snowballing from selected seed papers <small>[4]</small>.
+**Complementary strategy:** backward and forward snowballing from selected seed papers <small>[5]</small>.
 
 <div>
 <small style="text-align: left">
-[4] Claes Wohlin, "Guidelines for snowballing in systematic literature studies and a replication in software engineering" 2014.
+[5] Claes Wohlin, "Guidelines for snowballing in systematic literature studies and a replication in software engineering" 2014.
 </small>
 </div>
 
@@ -280,7 +319,7 @@ These are not final categories: they would be refined during data extraction and
 
 ### Aggregate computing
 
-- A macro-programming paradigm for distributed collective systems <small>[5]</small>;
+- A macro-programming paradigm for distributed collective systems <small>[6]</small>;
 - Devices compute local values and exchange them with neighbors;
 - Global behavior emerges as a computational field over the network.
 
@@ -292,7 +331,7 @@ These are not final categories: they would be refined during data extraction and
 
 <div>
 <small style="text-align: left">
-[5] J. Beal, D. Pianini and M. Viroli, "Aggregate Programming for the Internet of Things," 2015.
+[6] J. Beal, D. Pianini and M. Viroli, "Aggregate Programming for the Internet of Things," 2015.
 </small>
 </div>
 
@@ -300,7 +339,7 @@ These are not final categories: they would be refined during data extraction and
 
 # MacroSwarm as a possible bridge
 
-MacroSwarm is useful here because it instantiates aggregate computing in the swarm robotics setting <small>[6]</small>:
+MacroSwarm is useful here because it instantiates aggregate computing in the swarm robotics setting <small>[7]</small>:
 collective behaviors are expressed as composable high-level blocks, rather than only as low-level controllers.
 
 - Collective movement;
@@ -312,7 +351,7 @@ collective behaviors are expressed as composable high-level blocks, rather than 
 
 <div>
 <small style="text-align: left">
-[6] Gianluca Aguzzi, Roberto Casadei, Mirko Viroli: "MacroSwarm: A Field-based Compositional Framework for Swarm Programming," 2025.
+[7] Gianluca Aguzzi, Roberto Casadei, Mirko Viroli: "MacroSwarm: A Field-based Compositional Framework for Swarm Programming," 2025.
 </small>
 </div>
 
@@ -367,10 +406,7 @@ The nominal collective behavior is preserved whenever possible, while unsafe act
 - [1] A. D. Ames, X. Xu, J. W. Grizzle and P. Tabuada, "Control Barrier Function Based Quadratic Programs for Safety Critical Systems," 2017.
 - [2] Kitchenham, Barbara & Charters, Stuart, "Guidelines for performing Systematic Literature Reviews in Software Engineering," 2007.
 - [3] Kai Petersen, Sairam Vakkalanka, Ludwik Kuzniarz, "Guidelines for conducting systematic mapping studies in software engineering: An update," 2015.
-- [4] Claes Wohlin, "Guidelines for snowballing in systematic literature studies and a replication in software engineering" 2014.
-- [5] J. Beal, D. Pianini and M. Viroli, "Aggregate Programming for the Internet of Things," 2015.
-- [6] Gianluca Aguzzi, Roberto Casadei, Mirko Viroli: "MacroSwarm: A Field-based Compositional Framework for Swarm Programming," 2025.
-  
-- 
-- 
-- Roberto Casadei: Macroprogramming: Concepts, State of the Art, and Opportunities of Macroscopic Behaviour Modelling. ACM Comput. Surv. 55(13s): 275:1-275:37 (2023)
+- [4] Roberto Casadei: "Macroprogramming: Concepts, State of the Art, and Opportunities of Macroscopic Behaviour Modelling," 2023.
+- [5] Claes Wohlin, "Guidelines for snowballing in systematic literature studies and a replication in software engineering" 2014.
+- [6] J. Beal, D. Pianini and M. Viroli, "Aggregate Programming for the Internet of Things," 2015.
+- [7] Gianluca Aguzzi, Roberto Casadei, Mirko Viroli: "MacroSwarm: A Field-based Compositional Framework for Swarm Programming," 2025.
