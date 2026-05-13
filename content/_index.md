@@ -41,17 +41,37 @@ outputs = ["Reveal"]
 
 {{% /multicol %}}
 
-**Motivating gap:** safety-aware control methods exist, but it is not clear how they are used across swarm and multi-agent coordination tasks, nor how they connect to high-level swarm programming.
+**Motivating gap:** safety-aware control methods exist, \
+but it is not clear how they are used across swarm and multi-agent coordination tasks, \
+nor how they connect to high-level swarm programming.
 
 ---
 
-# Why Control * Functions?
+# Review objective
+
+The planned review would investigate how **Control Lyapunov Functions** and **Control Barrier Functions** \
+are used to support safe coordination in **swarm** and **multi-agent systems**.
+
+The focus would be on tasks such as:
+- Collision avoidance;
+- Formation control;
+- Coverage and connectivity maintenance.
+
+The planned contribution is a **taxonomy** of existing approaches and a **gap analysis** toward safety-aware aggregate programming.
+
+Here, aggregate programming is not the main review topic,
+but the perspective used to interpret one possible research gap: \
+how low-level safety guarantees could be exposed as composable high-level swarm programming abstractions.
+
+---
+
+# Background: CLF and CBF
 
 {{% multicol %}}
 
 {{% col %}}
 
-### Control Lyapunov Functions (CLF)
+#### Control Lyapunov Functions (CLF)
 
 - Encode progress toward a goal;
 - Support convergence and stabilization;
@@ -61,7 +81,7 @@ outputs = ["Reveal"]
 
 {{% col %}}
 
-### Control Barrier Functions (CBF)
+#### Control Barrier Functions (CBF)
 
 - Encode safety constraints;
 - Keep the system inside a safe set;
@@ -81,7 +101,7 @@ outputs = ["Reveal"]
 
 ---
 
-# Why this is a literature review problem
+# Why a structured review is needed
 
 - The topic is spread across control theory, robotics, swarm intelligence, and distributed systems;
 - Different communities use different terminology for similar ideas;
@@ -95,23 +115,6 @@ outputs = ["Reveal"]
 [2] Kitchenham, Barbara & Charters, Stuart, "Guidelines for performing Systematic Literature Reviews in Software Engineering," 2007.
 </small>
 </div>
-
----
-
-# Review objective
-
-The planned review would investigate how **Control Lyapunov Functions** and **Control Barrier Functions** are used to support safe coordination in **swarm** and **multi-agent systems**.
-
-The focus would be on tasks such as:
-- Collision avoidance;
-- Formation control;
-- Coverage and connectivity maintenance.
-
-The planned contribution is a **taxonomy** of existing approaches and a **gap analysis** toward safety-aware aggregate programming.
-
-Here, aggregate programming is not the main review topic, 
-but the perspective used to interpret one possible research gap: 
-how low-level safety guarantees could be exposed as composable high-level swarm programming abstractions.
 
 ---
 
@@ -160,9 +163,10 @@ how low-level safety guarantees could be exposed as composable high-level swarm 
 
 ---
 
-# Methodological exemplar: macroprogramming survey
+# Methodological exemplar:
+## macroprogramming survey
 
-An in-topic survey on macroprogramming is used here as a methodological reference point: 
+An in-topic survey on macroprogramming is used here as a methodological reference point: \
 it shows how a broad and fragmented research area can be organized through a review-style structure <small>[4]</small>.
 
 {{% multicol %}}
