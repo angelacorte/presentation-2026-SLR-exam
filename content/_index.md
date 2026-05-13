@@ -5,7 +5,7 @@ outputs = ["Reveal"]
 +++
 
 ### Review sketch
-# *Control Lyapunov* and *Control Barrier Functions* for Safe Coordination in Swarm and *Multi-Agent Systems*
+# *Control Lyapunov* and *Control Barrier Functions* for Safe Coordination in Swarms and *Multi-Agent Systems*
 
 [**Angela Cortecchia**](mailto:angela.cortecchia@unibo.it)
 
@@ -117,7 +117,7 @@ how low-level safety guarantees could be exposed as composable high-level swarm 
 
 # Research questions
 
-- **RQ1.** What coordination tasks are addressed by CLF/CBF-based approaches in swarm and multi-agent systems?
+- **RQ1.** What coordination tasks are addressed by CLF/CBF-based approaches in swarms and multi-agent systems?
 - **RQ2.** What safety properties are modeled and enforced?
 - **RQ3.** What control and coordination architectures are adopted?
 - **RQ4.** How are the proposed approaches evaluated?
@@ -312,7 +312,7 @@ collective behaviors are expressed as composable high-level blocks, rather than 
 
 <div>
 <small style="text-align: left">
-[6] Gianluca Aguzzi, Mirko Viroli, "MacroSwarm: A scala framework for swarm programming," 2025.
+[6] Gianluca Aguzzi, Roberto Casadei, Mirko Viroli: "MacroSwarm: A Field-based Compositional Framework for Swarm Programming," 2025.
 </small>
 </div>
 
@@ -369,4 +369,8 @@ The nominal collective behavior is preserved whenever possible, while unsafe act
 - [3] Kai Petersen, Sairam Vakkalanka, Ludwik Kuzniarz, "Guidelines for conducting systematic mapping studies in software engineering: An update," 2015.
 - [4] Claes Wohlin, "Guidelines for snowballing in systematic literature studies and a replication in software engineering" 2014.
 - [5] J. Beal, D. Pianini and M. Viroli, "Aggregate Programming for the Internet of Things," 2015.
-- [6] Gianluca Aguzzi, Mirko Viroli, "MacroSwarm: A scala framework for swarm programming," 2025.
+- [6] Gianluca Aguzzi, Roberto Casadei, Mirko Viroli: "MacroSwarm: A Field-based Compositional Framework for Swarm Programming," 2025.
+  
+- 
+- 
+- Roberto Casadei: Macroprogramming: Concepts, State of the Art, and Opportunities of Macroscopic Behaviour Modelling. ACM Comput. Surv. 55(13s): 275:1-275:37 (2023)
