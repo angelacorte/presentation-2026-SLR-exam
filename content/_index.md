@@ -363,7 +363,7 @@ collective behaviors are expressed as composable high-level blocks, rather than 
 
 Conversely, aggregate programming provides compositional high-level coordination, but safety certificates are not usually exposed as central programming constructs.
 
-**Potential paper idea:** safety-aware aggregate programming for swarm robotics.
+**Possible research direction:** safety-aware aggregate programming for swarm robotics.
 
 ---
 
