@@ -107,6 +107,12 @@ This template includes a GitHub Actions workflow (`.github/workflows/build-and-d
 2. Transforms and inlines Mermaid charts
 3. Deploys to GitHub Pages
 
+## Printable slides
+
+``` bash
+npx decktape -s 1920x1080 reveal http://localhost:1313/presentation-2026-SLR-exam/ slides.pdf
+```
+
 ## License
 
 This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
