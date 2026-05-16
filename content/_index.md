@@ -5,7 +5,7 @@ outputs = ["Reveal"]
 +++
 
 ### Review sketch
-# *Control Lyapunov* and *Control Barrier Functions* for Safe Coordination in Swarms and *Multi-Agent Systems*
+# Control Lyapunov and Control Barrier Functions for Safe Coordination in Swarms and Multi-Agent Systems
 
 [**Angela Cortecchia**](mailto:angela.cortecchia@unibo.it)
 
@@ -41,13 +41,15 @@ outputs = ["Reveal"]
 
 {{% /multicol %}}
 
-**Motivating gap:** safety-aware control methods exist, \
-but it is not clear how they are used across swarm and multi-agent coordination tasks, \
+{{% highlight %}}
+**Motivating gap.** Safety-aware control methods exist,
+but it is not clear how they are used across swarm and multi-agent coordination tasks,
 nor how they connect to high-level swarm programming.
+{{% /highlight %}}
 
 ---
 
-# Review objective and research questions
+# Review objective, scope rationale, and RQs
 
 The planned review investigates how **Control Lyapunov Functions** and **Control Barrier Functions** are used to support safe coordination in **swarm** and **multi-agent systems**.
 
@@ -55,12 +57,13 @@ The planned review investigates how **Control Lyapunov Functions** and **Control
 
 {{% col %}}
 
-### Focus
+### PICOC framing
 
-- Collision avoidance;
-- Formation control;
-- Coverage and connectivity maintenance;
-- Distributed or locally implementable coordination.
+- **Population:** swarm and multi-agent robotic systems;
+- **Intervention:** CLF, CBF, CLF-CBF-QP, barrier certificates;
+- **Comparison:** swarm programming languages and macro-programming abstractions;
+- **Outcome:** safety, convergence, scalability, and composability;
+- **Context:** distributed or locally implementable coordination.
 
 {{% /col %}}
 
@@ -71,13 +74,15 @@ The planned review investigates how **Control Lyapunov Functions** and **Control
 - Which coordination tasks and safety properties are addressed?
 - Which control and coordination architectures are adopted?
 - How are approaches evaluated, and at what scale?
-- What gaps emerge toward high-level swarm programming?
+- What gaps emerge with respect to swarm programming languages?
 
 {{% /col %}}
 
 {{% /multicol %}}
 
-**Planned contribution:** a taxonomy of existing approaches and a gap analysis toward safety-aware aggregate programming.
+{{% highlight %}}
+**Rationale.** The technical object is CLF/CBF-based safe coordination. Swarm programming is not a competing intervention, but the comparison lens used to ask whether these guarantees can become reusable and composable swarm-level constructs.
+{{% /highlight %}}
 
 ---
 
@@ -107,17 +112,15 @@ The planned review investigates how **Control Lyapunov Functions** and **Control
 
 {{% /multicol %}}
 
-**CLF-CBF-QP idea:** follow a nominal objective while minimally modifying the control input to satisfy safety constraints <small>[1]</small>.
+**CLF-CBF-QP:** follow a nominal objective while minimally modifying the control input to satisfy safety constraints <small>[1]</small>.
 
-<div>
-<small style="text-align: left">
+{{% footer %}}
 [1] A. D. Ames, X. Xu, J. W. Grizzle and P. Tabuada, "Control Barrier Function Based Quadratic Programs for Safety Critical Systems," 2017.
-</small>
-</div>
+{{% /footer %}}
 
 ---
 
-# Review type and scope
+# Review type and tertiary-survey check
 
 {{% multicol %}}
 
@@ -134,90 +137,156 @@ The planned review investigates how **Control Lyapunov Functions** and **Control
 
 {{% col %}}
 
-### Scope choices
+### Mini tertiary-survey protocol
 
-- White literature as the main source;
-- arXiv only as complementary source for emerging works;
-- Focus on robotics, control, and multi-agent coordination.
+- **Target:** secondary studies only: surveys, SLRs, and SMSs;
+- **Search terms:** CLF/CBF + survey/review/mapping;
+- **Adjacent areas checked:** multi-UAV collision avoidance, aerial swarm robotics, swarm programming;
+- **Extraction:** coverage, overlap with this review, and remaining gap.
 
 {{% /col %}}
 
 {{% /multicol %}}
 
-<div>
-<small style="text-align: left">
-[2] Kai Petersen, Sairam Vakkalanka, Ludwik Kuzniarz, "Guidelines for conducting systematic mapping studies in software engineering: An update," 2015.<br>
-[3] Kitchenham, Barbara & Charters, Stuart, "Guidelines for performing Systematic Literature Reviews in Software Engineering," 2007.
-</small>
-</div>
+{{% highlight %}}
+**Purpose.** The tertiary check is used to verify whether the planned review is already covered, and to justify the scope before screening primary studies.
+{{% /highlight %}}
+
+{{% footer %}}
+[2] K. Petersen, S. Vakkalanka and L. Kuzniarz, "Guidelines for conducting systematic mapping studies in software engineering: An update," 2015.<br>
+[3] B. Kitchenham and S. Charters, "Guidelines for performing Systematic Literature Reviews in Software Engineering," 2007.
+{{% /footer %}}
 
 ---
 
-# Methodological exemplar:
-## macroprogramming survey
-
-An in-topic survey on macroprogramming is used here as a methodological reference point: \
-it shows how a broad and fragmented research area can be organized through a review-style structure <small>[4]</small>.
+# Tertiary survey: coverage and gap
 
 {{% multicol %}}
 
 {{% col %}}
 
-### Structure highlighted
+### What existing surveys cover
 
-- Motivation: the field is fragmented across domains;
-- Research questions: used to organise the investigation;
-- Search and selection: based on databases, keywords, and manual inspection;
-- Extraction: notes on self-positioning, programming model, implementation, and examples.
+- **CLF/CBF theory:** nonlinear-affine systems, QP formulations, applications <small>[4]</small>;
+- **Safe learning:** learned or uncertain dynamics with CLF/CBF guarantees <small>[5]</small>;
+- **Collision avoidance:** multi-UAV planning, conflict resolution, guidance <small>[6]</small>;
+- **Aerial swarms:** trajectory generation, task allocation, sensing, mapping <small>[7]</small>.
 
 {{% /col %}}
 
 {{% col %}}
 
-### Methodological takeaways
+### Remaining gap
 
-- Terminology is treated as part of the review scope;
-- Classification dimensions are made explicit;
-- Synthesis is organised around concepts and themes;
-- The review ends by identifying opportunities and challenges.
+- **Coverage gap:** no retained secondary study maps CLF/CBF methods specifically in swarm/MAS coordination;
+- **Evidence gap:** limited synthesis of task type, architecture, validation scale, and scalability;
+- **Abstraction gap:** little attention to the distance between control-level guarantees and swarm-programming abstractions.
 
 {{% /col %}}
 
 {{% /multicol %}}
 
-<div>
-<small style="text-align: left">
-[4] R. Casadei, "Macroprogramming: Concepts, State of the Art, and Opportunities of Macroscopic Behaviour Modelling," 2023.
-</small>
-</div>
+{{% highlight %}}
+**Differentiation.** The planned review targets the intersection: CLF/CBF-based safe coordination in swarm/MAS, with explicit attention to scalability and swarm-programming abstractions.
+{{% /highlight %}}
+
+{{% footer %}}
+[4] B. Li, S. Wen, Z. Yan, G. Wen and T. Huang, "A Survey on the Control Lyapunov Function and Control Barrier Function for Nonlinear-Affine Control Systems," 2023.<br>
+[5] A. Anand, K. Seel, V. Gjærum, A. Håkansson, H. Robinson and A. Saad, "Safe Learning for Control using Control Lyapunov Functions and Control Barrier Functions: A Review," 2021.<br>
+[6] S. Huang, R. S. H. Teo and K. K. Tan, "Collision avoidance of multi unmanned aerial vehicles: A review," 2019.<br>
+[7] S. J. Chung, A. A. Paranjape, P. Dames, S. Shen and V. Kumar, "A Survey on Aerial Swarm Robotics," 2018.
+{{% /footer %}}
+
+---
+
+# Methodological anchors
+## SLR/SMS basis + tertiary survey
+
+{{< meta-panel title="Methodological stance" >}}
+SLR/SMS guidelines provide the methodological basis for reproducible search, selection, extraction, and synthesis <small>[2,3]</small>. Related secondary studies are used only to position the topic scope, identify overlap, and motivate the gap before screening primary studies <small>[4-7]</small>.
+{{< /meta-panel >}}
+
+{{% multicol %}}
+
+{{% col %}}
+
+### Protocol-level choices
+
+- Use SLR/SMS guidelines as the methodological reference;
+- Use the tertiary survey to position related secondary studies before screening primary studies;
+- Use the aerial-swarm survey to refine task and architecture terminology;
+- Treat the review protocol as the main exam artefact.
+
+{{% /col %}}
+
+{{% col %}}
+
+### Protocol-design rationale
+
+- Fragmentation is part of the research problem;
+- Control-side dimensions capture what CLF/CBF papers actually prove;
+- Swarm-side dimensions capture task, scale, and distribution assumptions;
+- Programming-side dimensions are used only to expose the abstraction gap.
+
+{{% /col %}}
+
+{{% /multicol %}}
 
 ---
 
 # Search and selection protocol
 
-### Candidate query string
+### Query blocks
 
 ```text
-("control barrier function" OR "control Lyapunov function" OR "CLF-CBF")
+("control barrier function" OR "control Lyapunov function" OR "CLF-CBF" OR "barrier certificate")
 AND
 ("multi-agent" OR "multi-robot" OR swarm OR "robot swarm")
 AND
-("collision avoidance" OR "formation control" OR coverage OR coordination)
-AND
-(distributed OR decentralized OR local)
+("collision avoidance" OR "formation control" OR coverage OR flocking OR coordination)
 ```
 
-**Sources:** Scopus, IEEE Xplore, ACM Digital Library, SpringerLink, ScienceDirect; arXiv only as complementary source.
+{{% multicol %}}
 
-**Complementary strategy:** backward and forward snowballing from selected seed papers <small>[5]</small>.
+{{% col %}}
 
-**Selection:** remove duplicates, screen title/abstract, then read full text for relevant or borderline studies.
+### Sources
 
-<div>
-<small style="text-align: left">
-[5] Claes Wohlin, "Guidelines for snowballing in systematic literature studies and a replication in software engineering" 2014.
-</small>
-</div>
+- Scopus;
+- IEEE Xplore.
+
+{{% /col %}}
+
+{{% col %}}
+
+### Pilot volume
+
+- Scopus: 230 raw hits;
+- IEEE Xplore: 149 raw hits;
+- before screening and deduplication.
+
+{{% /col %}}
+
+{{% col %}}
+
+### Selection
+
+- Deduplicate;
+- Screen title/abstract;
+- Full-text check for borderline studies;
+- Snowball from seed papers <small>[8]</small>.
+
+{{% /col %}}
+
+{{% /multicol %}}
+
+{{< meta-panel title="Search-design note" >}}
+Architecture is not used as a hard filter: centralized, decentralized, distributed, and local implementations are compared during extraction.
+{{< /meta-panel >}}
+
+{{% footer %}}
+[8] C. Wohlin, "Guidelines for snowballing in systematic literature studies and a replication in software engineering," 2014.
+{{% /footer %}}
 
 ---
 
@@ -248,18 +317,22 @@ AND
 
 ---
 
-# Preliminary extraction and classification framework
+# Extraction and classification framework
 
-| Dimension | Possible values |
-|---|---|
-| Coordination task | collision avoidance, formation, coverage, flocking |
-| Control architecture | centralized, decentralized, distributed |
-| Safety mechanism | CBF, CLF-CBF-QP, barrier certificates, hybrid methods |
-| System type | ground robots, UAVs, generic nonlinear MAS, simulated swarm |
-| Validation | theory only, simulation, hardware experiments |
-| Scalability evidence | number of agents, simulation scale, hardware scale, computational burden |
+| Dimension | Possible values | Rationale |
+|---|---|---|
+| Coordination task | collision avoidance, formation, coverage, flocking | captures the swarm/MAS problem being solved |
+| Control architecture | centralized, decentralized, distributed | separates global optimization from local coordination |
+| Safety mechanism | CBF, CLF-CBF-QP, barrier certificates, hybrid methods | distinguishes the formal control technique |
+| System type | ground robots, UAVs, generic nonlinear MAS, simulated swarm | makes evidence comparable across domains |
+| Validation | theory only, simulation, hardware experiments | captures maturity of evidence |
+| Scalability evidence | number of agents, simulation scale, hardware scale, computational burden | checks whether “swarm” claims scale beyond small teams |
+| Programming abstraction | none, controller-level API, behavior block, macro-programming language | connects the control literature to the comparison lens |
 
-The same extraction sheet also supports lightweight quality assessment: safety definition, clarity of assumptions, evaluation setting, and distribution level.
+{{% highlight %}}
+**Framework derivation.** The dimensions map each RQ to extraction needs:
+tasks and safety mechanisms come from the CLF/CBF seed papers; architecture, validation, and scalability come from the swarm/MAS scope; programming abstraction comes from the PICOC comparison lens.
+{{% /highlight %}}
 
 ---
 
@@ -269,39 +342,41 @@ The same extraction sheet also supports lightweight quality assessment: safety d
 
 {{% col %}}
 
-### CLF/CBF literature
+### Intervention: CLF/CBF literature
 
 - Strong formal guarantees;
 - Precise control-level formulations;
-- Often expressed as optimization problems.
+- Often expressed as optimization problems;
+- Usually close to the controller or dynamics model.
 
 {{% /col %}}
 
 {{% col %}}
 
-### Aggregate computing
+### Comparison: swarm programming
 
-- Macro-programming for distributed collective systems <small>[6]</small>;
+- Macro-programming for distributed collective systems <small>[9]</small>;
 - Devices compute local values and exchange them with neighbors;
-- Global behavior emerges as a computational field over the network.
+- Global behavior emerges as a computational field over the network;
+- Emphasis on reusable, composable behavior abstractions.
 
 {{% /col %}}
 
 {{% /multicol %}}
 
-**Interpretive gap:** CLF/CBF methods provide safety at control level, while aggregate programming provides compositional high-level coordination. The review asks whether these two levels have been connected.
+{{% highlight %}}
+**Comparison rationale.** In PICOC, comparison means “abstraction lens”: CLF/CBF papers are checked against what swarm programming languages normally provide, namely composability, reuse, and expression of collective behavior above controller level.
+{{% /highlight %}}
 
-<div>
-<small style="text-align: left">
-[6] J. Beal, D. Pianini and M. Viroli, "Aggregate Programming for the Internet of Things," 2015.
-</small>
-</div>
+{{% footer %}}
+[9] J. Beal, D. Pianini and M. Viroli, "Aggregate Programming for the Internet of Things," 2015.
+{{% /footer %}}
 
 ---
 
 # MacroSwarm as a possible bridge
 
-MacroSwarm is useful here because it instantiates aggregate computing in the swarm robotics setting <small>[7]</small>:
+MacroSwarm instantiates aggregate computing in the swarm robotics setting <small>[10]</small>: \
 collective behaviors are expressed as composable high-level blocks, rather than only as low-level controllers.
 
 - Collective movement;
@@ -309,59 +384,101 @@ collective behaviors are expressed as composable high-level blocks, rather than 
 - Shape formation and morphogenesis;
 - Team formation and collective planning.
 
-**Opportunity:** use CBF-style safety filters to make such blocks safety-aware.
+{{< meta-panel title="Opportunity" tone="green" >}}
+Use CBF-style safety filters to make aggregate-programming behavior blocks safety-aware.
+{{< /meta-panel >}}
 
-<div>
-<small style="text-align: left">
-[7] Gianluca Aguzzi, Roberto Casadei, Mirko Viroli: "MacroSwarm: A Field-based Compositional Framework for Swarm Programming," 2025.
-</small>
-</div>
+{{% footer %}}
+[10] G. Aguzzi, R. Casadei and M. Viroli, "MacroSwarm: A Field-based Compositional Framework for Swarm Programming," 2025.
+{{% /footer %}}
 
 ---
 
-# Research gap and proposed direction
+# Gap to be assessed
 
-**Gap:** CLF/CBF methods provide formal safety and convergence guarantees, but they are rarely integrated as reusable and composable abstractions in macro-programming frameworks for swarms.
+{{< meta-kicker >}}
+From safe controllers to safe swarm abstractions
+{{< /meta-kicker >}}
 
-**Possible direction:** safety-aware aggregate programming for swarm robotics.
+{{< meta-panels >}}
+{{< meta-panel title="Review gap" >}}
+CLF/CBF methods provide formal safety and convergence guarantees, but the review will assess whether these guarantees become reusable, composable abstractions in swarm-programming frameworks.
+{{< /meta-panel >}}
 
-Aggregate / MacroSwarm behavior block</br>
-↓</br>
-Nominal desired movement field</br>
-↓</br>
-CBF safety filter or QP projection</br>
-↓</br>
-Safe distributed actuation
+{{< meta-panel title="Question to assess" tone="green" >}}
+Are safety filters already supported, only partially explored, or still missing as aggregate-programming behavior blocks?
+{{< /meta-panel >}}
+{{< /meta-panels >}}
 
-The nominal collective behavior is preserved whenever possible, while unsafe actions are locally corrected.
+{{< bridge-flow title="Conceptual bridge to assess" >}}
+{{< bridge-step title="Aggregate behavior block" note="collective intent" >}}
+{{< bridge-arrow >}}
+{{< bridge-step title="Nominal movement field" note="desired dynamics" >}}
+{{< bridge-arrow >}}
+{{< bridge-step title="CBF/QP safety filter" note="constraint enforcement" >}}
+{{< bridge-arrow >}}
+{{< bridge-step title="Safe distributed actuation" note="local correction" >}}
+{{< /bridge-flow >}}
+
+{{< meta-note >}}
+The mapping checks whether this bridge is supported, partially explored, or still missing in the literature.
+{{< /meta-note >}}
 
 ---
 
 # Expected outputs
 
-- A reproducible protocol: RQs, search strings, databases, and selection criteria;
-- A taxonomy of CLF/CBF-based safe coordination approaches;
-- A synthesis structured around tasks, architectures, safety properties, validation, and scalability;
-- A gap analysis toward safety-aware aggregate and macro-programming abstractions.
+{{< meta-kicker >}}
+From protocol design to review contribution
+{{< /meta-kicker >}}
+
+{{< bridge-flow title="Deliverable chain" >}}
+{{< bridge-step title="Reproducible protocol" note="RQs, query, sources, criteria" >}}
+{{< bridge-arrow >}}
+{{< bridge-step title="Tertiary positioning" note="related surveys and differentiation" >}}
+{{< bridge-arrow >}}
+{{< bridge-step title="Classification taxonomy" note="tasks, architectures, safety mechanisms" >}}
+{{< bridge-arrow >}}
+{{< bridge-step title="Gap analysis" note="scalability and abstraction" >}}
+{{< /bridge-flow >}}
+
+{{< meta-panel title="Synthesis focus" tone="green" >}}
+The final synthesis will compare evidence across coordination tasks, safety properties, validation type, scale, and the distance from controller-level guarantees to swarm-programming abstractions.
+{{< /meta-panel >}}
 
 ---
 
 # Takeaways
 
-1. CLF and CBF provide a promising lens for safety-critical swarm coordination;
-2. A review protocol can make the scope, search, selection, extraction, and synthesis reproducible;
-3. The aggregate computing perspective reveals an original gap: compositional programming of formally safe swarm behaviors.
+{{< meta-kicker >}}
+What should remain clear
+{{< /meta-kicker >}}
 
-**Final idea:** from safe controllers to safety-aware aggregate blocks.
+{{< takeaway-grid >}}
+{{< takeaway-card number="01" title="A focused technical lens" >}}
+CLF and CBF provide a concrete way to review formal safety and convergence guarantees in swarm/MAS coordination.
+{{< /takeaway-card >}}
+
+{{< takeaway-card number="02" title="A reproducible review protocol" >}}
+The protocol makes scope, search, selection, extraction, and synthesis explicit before the full screening phase.
+{{< /takeaway-card >}}
+
+{{< takeaway-card number="03" title="A precise comparison lens" tone="green" >}}
+Swarm programming is used to test whether control-level guarantees connect to reusable, composable collective-behavior abstractions.
+{{< /takeaway-card >}}
+{{< /takeaway-grid >}}
 
 ---
 
 # References
 
 - [1] A. D. Ames, X. Xu, J. W. Grizzle and P. Tabuada, "Control Barrier Function Based Quadratic Programs for Safety Critical Systems," 2017.
-- [2] Kai Petersen, Sairam Vakkalanka, Ludwik Kuzniarz, "Guidelines for conducting systematic mapping studies in software engineering: An update," 2015.
-- [3] Kitchenham, Barbara & Charters, Stuart, "Guidelines for performing Systematic Literature Reviews in Software Engineering," 2007.
-- [4] Roberto Casadei: "Macroprogramming: Concepts, State of the Art, and Opportunities of Macroscopic Behaviour Modelling," 2023.
-- [5] Claes Wohlin, "Guidelines for snowballing in systematic literature studies and a replication in software engineering" 2014.
-- [6] J. Beal, D. Pianini and M. Viroli, "Aggregate Programming for the Internet of Things," 2015.
-- [7] Gianluca Aguzzi, Roberto Casadei, Mirko Viroli: "MacroSwarm: A Field-based Compositional Framework for Swarm Programming," 2025.
+- [2] K. Petersen, S. Vakkalanka and L. Kuzniarz, "Guidelines for conducting systematic mapping studies in software engineering: An update," 2015.
+- [3] B. Kitchenham and S. Charters, "Guidelines for performing Systematic Literature Reviews in Software Engineering," 2007.
+- [4] B. Li, S. Wen, Z. Yan, G. Wen and T. Huang, "A Survey on the Control Lyapunov Function and Control Barrier Function for Nonlinear-Affine Control Systems," 2023.
+- [5] A. Anand, K. Seel, V. Gjærum, A. Håkansson, H. Robinson and A. Saad, "Safe Learning for Control using Control Lyapunov Functions and Control Barrier Functions: A Review," 2021.
+- [6] S. Huang, R. S. H. Teo and K. K. Tan, "Collision avoidance of multi unmanned aerial vehicles: A review," 2019.
+- [7] S. J. Chung, A. A. Paranjape, P. Dames, S. Shen and V. Kumar, "A Survey on Aerial Swarm Robotics," 2018.
+- [8] C. Wohlin, "Guidelines for snowballing in systematic literature studies and a replication in software engineering," 2014.
+- [9] J. Beal, D. Pianini and M. Viroli, "Aggregate Programming for the Internet of Things," 2015.
+- [10] G. Aguzzi, R. Casadei and M. Viroli, "MacroSwarm: A Field-based Compositional Framework for Swarm Programming," 2025.
