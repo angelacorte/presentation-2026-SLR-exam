@@ -61,9 +61,9 @@ The planned review investigates how **Control Lyapunov Functions** and **Control
 
 - **Population:** swarm and multi-agent robotic systems;
 - **Intervention:** CLF, CBF, CLF-CBF-QP, barrier certificates;
-- **Comparison:** swarm programming languages and macro-programming abstractions;
+- **Comparison:** swarm programming languages and macro-programming abstractions as an abstraction reference;
 - **Outcome:** safety, convergence, scalability, and composability;
-- **Context:** distributed or locally implementable coordination.
+- **Context:** swarm/MAS coordination across centralized, decentralized, distributed, and local implementations.
 
 {{% /col %}}
 
@@ -134,7 +134,7 @@ Method choice and positioning check
 {{< framework-card title="Mini tertiary-survey protocol" tone="green" >}}
 
 - **Target:** secondary studies only: surveys, SLRs, and SMSs;
-- **Search terms:** CLF/CBF + survey/review/mapping;
+- **Search mode:** preliminary secondary-study scan using CLF/CBF + survey/review/mapping terms;
 - **Adjacent areas checked:** multi-UAV collision avoidance, aerial swarm robotics, swarm programming;
 - **Extraction:** coverage, overlap with this review, and remaining gap.
 {{< /framework-card >}}
@@ -279,7 +279,7 @@ Screening rules and evidence sanity checks
 
 {{< framework-grid >}}
 {{< framework-card title="Include" >}}
-Multi-agent, multi-robot, or swarm systems with explicit CLF, CBF, or barrier certificates for safety or convergence guarantees.
+Multi-agent, multi-robot, or swarm systems with explicit CLF, CBF, or barrier certificates addressing safety constraints and/or convergence objectives.
 {{< /framework-card >}}
 
 {{< framework-card title="Exclude" >}}
@@ -357,7 +357,7 @@ tasks and safety mechanisms come from the CLF/CBF seed papers; architecture, val
 {{% /multicol %}}
 
 {{% highlight %}}
-**Comparison rationale.** In PICOC, comparison means “abstraction lens”: CLF/CBF papers are checked against what swarm programming languages normally provide, namely composability, reuse, and expression of collective behavior above controller level.
+**Comparison rationale.** In PICOC, comparison means “abstraction lens”: CLF/CBF papers are checked for evidence of properties associated with swarm-programming abstractions, namely composability, reuse, and expression of collective behavior above controller level.
 {{% /highlight %}}
 
 {{% footer %}}
@@ -377,7 +377,7 @@ collective behaviors are expressed as composable high-level blocks, rather than 
 - Team formation and collective planning.
 
 {{< meta-panel title="Opportunity" tone="green" >}}
-Use CBF-style safety filters to make aggregate-programming behavior blocks safety-aware.
+Candidate bridge to assess: safety filters for aggregate-programming behavior blocks.
 {{< /meta-panel >}}
 
 {{% footer %}}
@@ -398,7 +398,7 @@ CLF/CBF methods provide formal safety and convergence guarantees, but the review
 {{< /meta-panel >}}
 
 {{< meta-panel title="Question to assess" tone="green" >}}
-Are safety filters already supported, only partially explored, or still missing as aggregate-programming behavior blocks?
+Are CLF/CBF-style safety filters already supported, partially explored, or still missing for aggregate-programming behavior blocks?
 {{< /meta-panel >}}
 {{< /meta-panels >}}
 
@@ -420,10 +420,6 @@ The mapping checks whether this bridge is supported, partially explored, or stil
 
 # Expected outputs
 
-{{< meta-kicker >}}
-From protocol design to review contribution
-{{< /meta-kicker >}}
-
 {{< bridge-flow title="Deliverable chain" >}}
 {{< bridge-step title="Reproducible protocol" note="RQs, query, sources, criteria" >}}
 {{< bridge-arrow >}}
@@ -441,10 +437,6 @@ The final synthesis will compare evidence across coordination tasks, safety prop
 ---
 
 # Takeaways
-
-{{< meta-kicker >}}
-What should remain clear
-{{< /meta-kicker >}}
 
 {{< takeaway-grid >}}
 {{< takeaway-card number="01" title="A focused technical lens" >}}
