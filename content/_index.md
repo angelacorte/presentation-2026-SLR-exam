@@ -88,31 +88,27 @@ The planned review investigates how **Control Lyapunov Functions** and **Control
 
 # Background: CLF and CBF
 
-{{% multicol %}}
+{{< meta-kicker >}}
+Two complementary control certificates
+{{< /meta-kicker >}}
 
-{{% col %}}
-
-#### Control Lyapunov Functions (CLF)
-
+{{< framework-grid >}}
+{{< framework-card title="Control Lyapunov Functions" >}}
 - Encode progress toward a goal;
 - Support convergence and stabilization;
 - Useful for reaching a target, tracking, and formation objectives.
+{{< /framework-card >}}
 
-{{% /col %}}
-
-{{% col %}}
-
-#### Control Barrier Functions (CBF)
-
+{{< framework-card title="Control Barrier Functions" >}}
 - Encode safety constraints;
 - Keep the system inside a safe set;
 - Useful for collision avoidance and obstacle avoidance.
+{{< /framework-card >}}
 
-{{% /col %}}
-
-{{% /multicol %}}
-
-**CLF-CBF-QP:** follow a nominal objective while minimally modifying the control input to satisfy safety constraints <small>[1]</small>.
+{{< framework-card title="CLF-CBF-QP" tone="green" >}}
+Follow a nominal objective while minimally modifying the control input to satisfy safety constraints <small>[1]</small>.
+{{< /framework-card >}}
+{{< /framework-grid >}}
 
 {{% footer %}}
 [1] A. D. Ames, X. Xu, J. W. Grizzle and P. Tabuada, "Control Barrier Function Based Quadratic Programs for Safety Critical Systems," 2017.
@@ -122,35 +118,31 @@ The planned review investigates how **Control Lyapunov Functions** and **Control
 
 # Review type and tertiary-survey check
 
-{{% multicol %}}
+{{< meta-kicker >}}
+Method choice and positioning check
+{{< /meta-kicker >}}
 
-{{% col %}}
-
-### Review type
+{{< framework-grid columns="2" >}}
+{{< framework-card title="Review type" >}}
 
 - Systematic mapping / SLR-oriented review sketch <small>[2]</small>;
 - Content-based classification of primary studies;
 - No meta-analysis: expected evidence is heterogeneous;
 - Structured protocol needed because terminology is fragmented across control, robotics, swarm intelligence, and distributed systems <small>[3]</small>.
+{{< /framework-card >}}
 
-{{% /col %}}
-
-{{% col %}}
-
-### Mini tertiary-survey protocol
+{{< framework-card title="Mini tertiary-survey protocol" tone="green" >}}
 
 - **Target:** secondary studies only: surveys, SLRs, and SMSs;
 - **Search terms:** CLF/CBF + survey/review/mapping;
 - **Adjacent areas checked:** multi-UAV collision avoidance, aerial swarm robotics, swarm programming;
 - **Extraction:** coverage, overlap with this review, and remaining gap.
+{{< /framework-card >}}
+{{< /framework-grid >}}
 
-{{% /col %}}
-
-{{% /multicol %}}
-
-{{% highlight %}}
-**Purpose.** The tertiary check is used to verify whether the planned review is already covered, and to justify the scope before screening primary studies.
-{{% /highlight %}}
+{{< meta-panel title="Purpose" compact="true" >}}
+The tertiary check verifies whether the planned review is already covered and justifies the scope before screening primary studies.
+{{< /meta-panel >}}
 
 {{% footer %}}
 [2] K. Petersen, S. Vakkalanka and L. Kuzniarz, "Guidelines for conducting systematic mapping studies in software engineering: An update," 2015.<br>
@@ -246,39 +238,28 @@ AND
 ("collision avoidance" OR "formation control" OR coverage OR flocking OR coordination)
 ```
 
-{{% multicol %}}
-
-{{% col %}}
-
-### Sources
+{{< framework-grid >}}
+{{< framework-card title="Sources" compact="true" >}}
 
 - Scopus;
 - IEEE Xplore.
+{{< /framework-card >}}
 
-{{% /col %}}
-
-{{% col %}}
-
-### Pilot volume
+{{< framework-card title="Pilot volume" compact="true" >}}
 
 - Scopus: 230 raw hits;
 - IEEE Xplore: 149 raw hits;
 - before screening and deduplication.
+{{< /framework-card >}}
 
-{{% /col %}}
-
-{{% col %}}
-
-### Selection
+{{< framework-card title="Selection" tone="green" compact="true" >}}
 
 - Deduplicate;
 - Screen title/abstract;
 - Full-text check for borderline studies;
 - Snowball from seed papers <small>[8]</small>.
-
-{{% /col %}}
-
-{{% /multicol %}}
+{{< /framework-card >}}
+{{< /framework-grid >}}
 
 {{< meta-panel title="Search-design note" >}}
 Architecture is not used as a hard filter: centralized, decentralized, distributed, and local implementations are compared during extraction.
@@ -292,42 +273,53 @@ Architecture is not used as a hard filter: centralized, decentralized, distribut
 
 # Inclusion, exclusion, and quality checks
 
-{{% multicol %}}
+{{< meta-kicker >}}
+Screening rules and evidence sanity checks
+{{< /meta-kicker >}}
 
-{{% col %}}
+{{< framework-grid >}}
+{{< framework-card title="Include" >}}
+Multi-agent, multi-robot, or swarm systems with explicit CLF, CBF, or barrier certificates for safety or convergence guarantees.
+{{< /framework-card >}}
 
-**Include:** multi-agent, multi-robot, or swarm systems with explicit CLF, CBF, or barrier certificates for safety or convergence guarantees.
+{{< framework-card title="Exclude" >}}
+Single-agent studies, pure path planning without safety certificates, no explicit coordination or safety task, non-English papers.
+{{< /framework-card >}}
 
-**Exclude:** single-agent studies, pure path planning without safety certificates, no explicit coordination or safety task, non-English papers.
-
-{{% /col %}}
-
-{{% col %}}
-
-### Lightweight quality checks
+{{< framework-card title="Quality checks" tone="green" >}}
 
 - Is the safety property explicitly defined?
 - Are assumptions and system model clear?
 - Is the evaluation scenario described?
 - Is the level of distribution/decentralization explicit?
-
-{{% /col %}}
-
-{{% /multicol %}}
+{{< /framework-card >}}
+{{< /framework-grid >}}
 
 ---
 
 # Extraction and classification framework
 
-| Dimension | Possible values | Rationale |
-|---|---|---|
-| Coordination task | collision avoidance, formation, coverage, flocking | captures the swarm/MAS problem being solved |
-| Control architecture | centralized, decentralized, distributed | separates global optimization from local coordination |
-| Safety mechanism | CBF, CLF-CBF-QP, barrier certificates, hybrid methods | distinguishes the formal control technique |
-| System type | ground robots, UAVs, generic nonlinear MAS, simulated swarm | makes evidence comparable across domains |
-| Validation | theory only, simulation, hardware experiments | captures maturity of evidence |
-| Scalability evidence | number of agents, simulation scale, hardware scale, computational burden | checks whether “swarm” claims scale beyond small teams |
-| Programming abstraction | none, controller-level API, behavior block, macro-programming language | connects the control literature to the comparison lens |
+{{< meta-kicker >}}
+Coding scheme for extraction and synthesis
+{{< /meta-kicker >}}
+
+{{< framework-grid >}}
+{{< framework-card title="Coordination scope" >}}
+- **Task:** collision avoidance, formation, coverage, flocking;
+- **System:** ground robots, UAVs, generic nonlinear MAS, simulated swarm.
+{{< /framework-card >}}
+
+{{< framework-card title="Control structure" >}}
+- **Architecture:** centralized, decentralized, distributed;
+- **Mechanism:** CBF, CLF-CBF-QP, barrier certificates, hybrid methods.
+{{< /framework-card >}}
+
+{{< framework-card title="Evidence and abstraction" tone="green" >}}
+- **Validation:** theory only, simulation, hardware experiments;
+- **Scalability:** number of agents, simulation scale, hardware scale, computational burden;
+- **Programming abstraction:** none, controller-level API, behavior block, macro-programming language.
+{{< /framework-card >}}
+{{< /framework-grid >}}
 
 {{% highlight %}}
 **Framework derivation.** The dimensions map each RQ to extraction needs:
