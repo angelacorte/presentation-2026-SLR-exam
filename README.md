@@ -110,7 +110,7 @@ This template includes a GitHub Actions workflow (`.github/workflows/build-and-d
 ## Printable slides
 
 ``` bash
-npx decktape -s 1920x1080 reveal http://localhost:1313/presentation-2026-SLR-exam/ slides.pdf
+npx decktape -s 1920x1080 reveal http://localhost:1313/presentation-2026-SLR-exam/ presentation-2026-SLR.pdf
 ```
 
 ## License
