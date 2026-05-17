@@ -455,8 +455,8 @@ CLF and CBF provide a concrete way to review formal safety and convergence guara
 The protocol makes scope, search, selection, extraction, and synthesis explicit before the full screening phase.
 {{< /takeaway-card >}}
 
-{{< takeaway-card number="03" title="A precise comparison lens" tone="green" >}}
-Swarm programming is used to test whether control-level guarantees connect to reusable, composable collective-behavior abstractions.
+{{< takeaway-card number="03" title="From control guarantees to swarm abstractions" tone="green" >}}
+The review maps how far the literature moves from controller-level safety filters toward reusable, composable swarm-programming constructs.
 {{< /takeaway-card >}}
 {{< /takeaway-grid >}}
 
