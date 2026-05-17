@@ -67,9 +67,9 @@ nor how they connect to high-level swarm programming.
 <ul>
 <li><strong>Population:</strong> swarm and multi-agent robotic systems;</li>
 <li><strong>Intervention:</strong> CLF, CBF, CLF-CBF-QP, barrier certificates;</li>
-<li><strong>Comparison:</strong> swarm programming languages and macro-programming abstractions;</li>
+<li><strong>Comparison:</strong> swarm programming languages and macro-programming abstractions as an abstraction reference;</li>
 <li><strong>Outcome:</strong> safety, convergence, scalability, and composability;</li>
-<li><strong>Context:</strong> distributed or locally implementable coordination.</li>
+<li><strong>Context:</strong> swarm/MAS coordination across centralized, decentralized, distributed, and local implementations.</li>
 </ul>
 </div>
 <div class="col "><h3 id="guiding-questions">Guiding questions</h3>
@@ -181,7 +181,7 @@ nor how they connect to high-level swarm programming.
   <div class="framework-card-body">
     <ul>
 <li><strong>Target:</strong> secondary studies only: surveys, SLRs, and SMSs;</li>
-<li><strong>Search terms:</strong> CLF/CBF + survey/review/mapping;</li>
+<li><strong>Search mode:</strong> preliminary secondary-study scan using CLF/CBF + survey/review/mapping terms;</li>
 <li><strong>Adjacent areas checked:</strong> multi-UAV collision avoidance, aerial swarm robotics, swarm programming;</li>
 <li><strong>Extraction:</strong> coverage, overlap with this review, and remaining gap.</li>
 </ul>
@@ -369,7 +369,7 @@ nor how they connect to high-level swarm programming.
 <div class="framework-card is-blue">
   <div class="framework-card-title">Include</div>
   <div class="framework-card-body">
-    Multi-agent, multi-robot, or swarm systems with explicit CLF, CBF, or barrier certificates for safety or convergence guarantees.
+    Multi-agent, multi-robot, or swarm systems with explicit CLF, CBF, or barrier certificates addressing safety constraints and/or convergence objectives.
   </div>
 </div>
 
@@ -491,7 +491,7 @@ tasks and safety mechanisms come from the CLF/CBF seed papers; architecture, val
 </div>
 <div class="meta-panel meta-highlight">
     <div class="meta-panel-body">
-        <strong>Comparison rationale.</strong> In PICOC, comparison means “abstraction lens”: CLF/CBF papers are checked against what swarm programming languages normally provide, namely composability, reuse, and expression of collective behavior above controller level.
+        <strong>Comparison rationale.</strong> In PICOC, comparison means “abstraction lens”: CLF/CBF papers are checked for evidence of properties associated with swarm-programming abstractions, namely composability, reuse, and expression of collective behavior above controller level.
     </div>
 </div>
 <div>
@@ -516,7 +516,7 @@ collective behaviors are expressed as composable high-level blocks, rather than 
 <div class="meta-panel is-green">
   <div class="meta-panel-title">Opportunity</div>
   <div class="meta-panel-body">
-    Use CBF-style safety filters to make aggregate-programming behavior blocks safety-aware.
+    Candidate bridge to assess: safety filters for aggregate-programming behavior blocks.
   </div>
 </div>
 
@@ -551,7 +551,7 @@ collective behaviors are expressed as composable high-level blocks, rather than 
 <div class="meta-panel is-green">
   <div class="meta-panel-title">Question to assess</div>
   <div class="meta-panel-body">
-    Are safety filters already supported, only partially explored, or still missing as aggregate-programming behavior blocks?
+    Are CLF/CBF-style safety filters already supported, partially explored, or still missing for aggregate-programming behavior blocks?
   </div>
 </div>
 
@@ -607,10 +607,6 @@ collective behaviors are expressed as composable high-level blocks, rather than 
 
 </section><section>
 <h1 id="expected-outputs">Expected outputs</h1>
-<div class="meta-kicker">
-  From protocol design to review contribution
-</div>
-
 
 <div class="bridge-flow-wrap">
   <div class="bridge-flow-title">Deliverable chain</div>
@@ -666,10 +662,6 @@ collective behaviors are expressed as composable high-level blocks, rather than 
 
 </section><section>
 <h1 id="takeaways">Takeaways</h1>
-<div class="meta-kicker">
-  What should remain clear
-</div>
-
 <div class="takeaway-grid">
   
 
