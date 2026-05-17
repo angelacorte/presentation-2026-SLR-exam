@@ -8,7 +8,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><link rel="stylesheet" href="/presentation-2026-SLR-exam/reveal-js/dist/reset.css">
 <link rel="stylesheet" href="/presentation-2026-SLR-exam/reveal-js/dist/reveal.css">
-  <link rel="stylesheet" href="/presentation-2026-SLR-exam/css/custom-theme.min.369ec6dd83a1833ebe95bdd43a34f25e7e6c78533e30c676b8cf752c3c73f04a.css" id="theme"><link rel="stylesheet" href="/presentation-2026-SLR-exam/highlight-js/solarized-dark.min.css">
+  <link rel="stylesheet" href="/presentation-2026-SLR-exam/css/custom-theme.min.27c850f45a44c4595b156fdb0de45e8a831d721bfa01d5ca78cd6ce207106973.css" id="theme"><link rel="stylesheet" href="/presentation-2026-SLR-exam/highlight-js/solarized-dark.min.css">
 <link href="https://fonts.googleapis.com/css?family=Roboto Mono" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Oxygen Mono" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Ubuntu Mono" rel="stylesheet">
@@ -89,25 +89,58 @@ nor how they connect to high-level swarm programming.
 </div>
 </section><section>
 <h1 id="background-clf-and-cbf">Background: CLF and CBF</h1>
+<div class="meta-kicker">
+  Two complementary control certificates
+</div>
 
-<div class="container w-100 m-0 p-0">
-    <div class="row "><div class="col "><h4 id="control-lyapunov-functions-clf">Control Lyapunov Functions (CLF)</h4>
-<ul>
+
+<div class="framework-grid">
+  
+
+
+
+<div class="framework-card is-blue">
+  <div class="framework-card-title">Control Lyapunov Functions</div>
+  <div class="framework-card-body">
+    <ul>
 <li>Encode progress toward a goal;</li>
 <li>Support convergence and stabilization;</li>
 <li>Useful for reaching a target, tracking, and formation objectives.</li>
 </ul>
+
+  </div>
 </div>
-<div class="col "><h4 id="control-barrier-functions-cbf">Control Barrier Functions (CBF)</h4>
-<ul>
+
+
+
+
+
+<div class="framework-card is-blue">
+  <div class="framework-card-title">Control Barrier Functions</div>
+  <div class="framework-card-body">
+    <ul>
 <li>Encode safety constraints;</li>
 <li>Keep the system inside a safe set;</li>
 <li>Useful for collision avoidance and obstacle avoidance.</li>
 </ul>
+
+  </div>
 </div>
+
+
+
+
+
+<div class="framework-card is-green">
+  <div class="framework-card-title">CLF-CBF-QP</div>
+  <div class="framework-card-body">
+    Follow a nominal objective while minimally modifying the control input to satisfy safety constraints <small>[1]</small>.
+  </div>
 </div>
+
+
 </div>
-<p><strong>CLF-CBF-QP:</strong> follow a nominal objective while minimally modifying the control input to satisfy safety constraints <small>[1]</small>.</p>
+
 <div>
     <small style="text-align: left">
         <br>
@@ -116,31 +149,59 @@ nor how they connect to high-level swarm programming.
 </div>
 </section><section>
 <h1 id="review-type-and-tertiary-survey-check">Review type and tertiary-survey check</h1>
+<div class="meta-kicker">
+  Method choice and positioning check
+</div>
 
-<div class="container w-100 m-0 p-0">
-    <div class="row "><div class="col "><h3 id="review-type">Review type</h3>
-<ul>
+
+<div class="framework-grid is-two">
+  
+
+
+
+<div class="framework-card is-blue">
+  <div class="framework-card-title">Review type</div>
+  <div class="framework-card-body">
+    <ul>
 <li>Systematic mapping / SLR-oriented review sketch <small>[2]</small>;</li>
 <li>Content-based classification of primary studies;</li>
 <li>No meta-analysis: expected evidence is heterogeneous;</li>
 <li>Structured protocol needed because terminology is fragmented across control, robotics, swarm intelligence, and distributed systems <small>[3]</small>.</li>
 </ul>
+
+  </div>
 </div>
-<div class="col "><h3 id="mini-tertiary-survey-protocol">Mini tertiary-survey protocol</h3>
-<ul>
+
+
+
+
+
+<div class="framework-card is-green">
+  <div class="framework-card-title">Mini tertiary-survey protocol</div>
+  <div class="framework-card-body">
+    <ul>
 <li><strong>Target:</strong> secondary studies only: surveys, SLRs, and SMSs;</li>
 <li><strong>Search terms:</strong> CLF/CBF + survey/review/mapping;</li>
 <li><strong>Adjacent areas checked:</strong> multi-UAV collision avoidance, aerial swarm robotics, swarm programming;</li>
 <li><strong>Extraction:</strong> coverage, overlap with this review, and remaining gap.</li>
 </ul>
+
+  </div>
 </div>
+
+
 </div>
+
+
+
+
+<div class="meta-panel is-blue is-compact">
+  <div class="meta-panel-title">Purpose</div>
+  <div class="meta-panel-body">
+    The tertiary check verifies whether the planned review is already covered and justifies the scope before screening primary studies.
+  </div>
 </div>
-<div class="meta-panel meta-highlight">
-    <div class="meta-panel-body">
-        <strong>Purpose.</strong> The tertiary check is used to verify whether the planned review is already covered, and to justify the scope before screening primary studies.
-    </div>
-</div>
+
 <div>
     <small style="text-align: left">
         <br>
@@ -188,6 +249,7 @@ nor how they connect to high-level swarm programming.
 <h2 id="slrsms-basis--tertiary-survey">SLR/SMS basis + tertiary survey</h2>
 
 
+
 <div class="meta-panel is-blue">
   <div class="meta-panel-title">Methodological stance</div>
   <div class="meta-panel-body">
@@ -224,30 +286,59 @@ nor how they connect to high-level swarm programming.
 </span></span><span style="display:flex;"><span>AND
 </span></span><span style="display:flex;"><span>("collision avoidance" OR "formation control" OR coverage OR flocking OR coordination)
 </span></span></code></pre></div>
-<div class="container w-100 m-0 p-0">
-    <div class="row "><div class="col "><h3 id="sources">Sources</h3>
-<ul>
+<div class="framework-grid">
+  
+
+
+
+<div class="framework-card is-blue is-compact">
+  <div class="framework-card-title">Sources</div>
+  <div class="framework-card-body">
+    <ul>
 <li>Scopus;</li>
 <li>IEEE Xplore.</li>
 </ul>
+
+  </div>
 </div>
-<div class="col "><h3 id="pilot-volume">Pilot volume</h3>
-<ul>
+
+
+
+
+
+<div class="framework-card is-blue is-compact">
+  <div class="framework-card-title">Pilot volume</div>
+  <div class="framework-card-body">
+    <ul>
 <li>Scopus: 230 raw hits;</li>
 <li>IEEE Xplore: 149 raw hits;</li>
 <li>before screening and deduplication.</li>
 </ul>
+
+  </div>
 </div>
-<div class="col "><h3 id="selection">Selection</h3>
-<ul>
+
+
+
+
+
+<div class="framework-card is-green is-compact">
+  <div class="framework-card-title">Selection</div>
+  <div class="framework-card-body">
+    <ul>
 <li>Deduplicate;</li>
 <li>Screen title/abstract;</li>
 <li>Full-text check for borderline studies;</li>
 <li>Snowball from seed papers <small>[8]</small>.</li>
 </ul>
+
+  </div>
 </div>
+
+
 </div>
-</div>
+
+
 
 
 <div class="meta-panel is-blue">
@@ -265,69 +356,111 @@ nor how they connect to high-level swarm programming.
 </div>
 </section><section>
 <h1 id="inclusion-exclusion-and-quality-checks">Inclusion, exclusion, and quality checks</h1>
-
-<div class="container w-100 m-0 p-0">
-    <div class="row "><div class="col "><p><strong>Include:</strong> multi-agent, multi-robot, or swarm systems with explicit CLF, CBF, or barrier certificates for safety or convergence guarantees.</p>
-<p><strong>Exclude:</strong> single-agent studies, pure path planning without safety certificates, no explicit coordination or safety task, non-English papers.</p>
+<div class="meta-kicker">
+  Screening rules and evidence sanity checks
 </div>
-<div class="col "><h3 id="lightweight-quality-checks">Lightweight quality checks</h3>
-<ul>
+
+
+<div class="framework-grid">
+  
+
+
+
+<div class="framework-card is-blue">
+  <div class="framework-card-title">Include</div>
+  <div class="framework-card-body">
+    Multi-agent, multi-robot, or swarm systems with explicit CLF, CBF, or barrier certificates for safety or convergence guarantees.
+  </div>
+</div>
+
+
+
+
+
+<div class="framework-card is-blue">
+  <div class="framework-card-title">Exclude</div>
+  <div class="framework-card-body">
+    Single-agent studies, pure path planning without safety certificates, no explicit coordination or safety task, non-English papers.
+  </div>
+</div>
+
+
+
+
+
+<div class="framework-card is-green">
+  <div class="framework-card-title">Quality checks</div>
+  <div class="framework-card-body">
+    <ul>
 <li>Is the safety property explicitly defined?</li>
 <li>Are assumptions and system model clear?</li>
 <li>Is the evaluation scenario described?</li>
 <li>Is the level of distribution/decentralization explicit?</li>
 </ul>
+
+  </div>
 </div>
+
+
 </div>
-</div>
+
 </section><section>
 <h1 id="extraction-and-classification-framework">Extraction and classification framework</h1>
-<table>
-  <thead>
-      <tr>
-          <th>Dimension</th>
-          <th>Possible values</th>
-          <th>Rationale</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Coordination task</td>
-          <td>collision avoidance, formation, coverage, flocking</td>
-          <td>captures the swarm/MAS problem being solved</td>
-      </tr>
-      <tr>
-          <td>Control architecture</td>
-          <td>centralized, decentralized, distributed</td>
-          <td>separates global optimization from local coordination</td>
-      </tr>
-      <tr>
-          <td>Safety mechanism</td>
-          <td>CBF, CLF-CBF-QP, barrier certificates, hybrid methods</td>
-          <td>distinguishes the formal control technique</td>
-      </tr>
-      <tr>
-          <td>System type</td>
-          <td>ground robots, UAVs, generic nonlinear MAS, simulated swarm</td>
-          <td>makes evidence comparable across domains</td>
-      </tr>
-      <tr>
-          <td>Validation</td>
-          <td>theory only, simulation, hardware experiments</td>
-          <td>captures maturity of evidence</td>
-      </tr>
-      <tr>
-          <td>Scalability evidence</td>
-          <td>number of agents, simulation scale, hardware scale, computational burden</td>
-          <td>checks whether “swarm” claims scale beyond small teams</td>
-      </tr>
-      <tr>
-          <td>Programming abstraction</td>
-          <td>none, controller-level API, behavior block, macro-programming language</td>
-          <td>connects the control literature to the comparison lens</td>
-      </tr>
-  </tbody>
-</table>
+<div class="meta-kicker">
+  Coding scheme for extraction and synthesis
+</div>
+
+
+<div class="framework-grid">
+  
+
+
+
+<div class="framework-card is-blue">
+  <div class="framework-card-title">Coordination scope</div>
+  <div class="framework-card-body">
+    <ul>
+<li><strong>Task:</strong> collision avoidance, formation, coverage, flocking;</li>
+<li><strong>System:</strong> ground robots, UAVs, generic nonlinear MAS, simulated swarm.</li>
+</ul>
+
+  </div>
+</div>
+
+
+
+
+
+<div class="framework-card is-blue">
+  <div class="framework-card-title">Control structure</div>
+  <div class="framework-card-body">
+    <ul>
+<li><strong>Architecture:</strong> centralized, decentralized, distributed;</li>
+<li><strong>Mechanism:</strong> CBF, CLF-CBF-QP, barrier certificates, hybrid methods.</li>
+</ul>
+
+  </div>
+</div>
+
+
+
+
+
+<div class="framework-card is-green">
+  <div class="framework-card-title">Evidence and abstraction</div>
+  <div class="framework-card-body">
+    <ul>
+<li><strong>Validation:</strong> theory only, simulation, hardware experiments;</li>
+<li><strong>Scalability:</strong> number of agents, simulation scale, hardware scale, computational burden;</li>
+<li><strong>Programming abstraction:</strong> none, controller-level API, behavior block, macro-programming language.</li>
+</ul>
+
+  </div>
+</div>
+
+
+</div>
+
 <div class="meta-panel meta-highlight">
     <div class="meta-panel-body">
         <strong>Framework derivation.</strong> The dimensions map each RQ to extraction needs:
@@ -379,6 +512,7 @@ collective behaviors are expressed as composable high-level blocks, rather than 
 </ul>
 
 
+
 <div class="meta-panel is-green">
   <div class="meta-panel-title">Opportunity</div>
   <div class="meta-panel-body">
@@ -402,12 +536,14 @@ collective behaviors are expressed as composable high-level blocks, rather than 
   
 
 
+
 <div class="meta-panel is-blue">
   <div class="meta-panel-title">Review gap</div>
   <div class="meta-panel-body">
     CLF/CBF methods provide formal safety and convergence guarantees, but the review will assess whether these guarantees become reusable, composable abstractions in swarm-programming frameworks.
   </div>
 </div>
+
 
 
 
@@ -517,6 +653,7 @@ collective behaviors are expressed as composable high-level blocks, rather than 
 
   </div>
 </div>
+
 
 
 
